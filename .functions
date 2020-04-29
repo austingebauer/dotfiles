@@ -1,12 +1,22 @@
 #!/usr/bin/env bash
 
+# Lint Go code
+# Usage:
+# `go-lint`
+# `go-lint dir1 dir2/... dir3/file1.go`
+# `go-lint ./...`
+# `go-lint --new-from-rev=HEAD~1 ./...`
+function go-lint() {
+    golangci-lint run --config ~/.golangci.yml "$@"
+}
+
 # Clean all docker volumes
-function dockerClean() {
+function docker-clean() {
     docker volume rm $(docker volume ls -qf dangling=true)
 }
 
 # Kill all docker containers
-function dockerKillAll() {
+function docker-killall() {
     docker rm -f $(docker ps -a -q)
 }
 
@@ -48,7 +58,7 @@ function gz() {
 }
 
 # Run `dig` and display the most useful info
-function digga() {
+function digg() {
 	dig +nocmd "$1" any +multiline +noall +answer;
 }
 

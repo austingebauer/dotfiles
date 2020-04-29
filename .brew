@@ -22,4 +22,5 @@ brew install gs
 brew install imagemagick
 brew install ssh-copy-id
 brew install tree
+brew install golangci/tap/golangci-lint
 brew cleanup
