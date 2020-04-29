@@ -1,0 +1,56 @@
+#!/usr/bin/env bash
+
+# zsh
+alias sz="source ~/.zshrc"
+alias zshrc="vi ~/.zshrc"
+
+# vim
+alias vimrc="vim ~/.vimrc"
+alias vi="vim"
+
+# Kubernetes
+alias kb="kubectl"
+
+# Docker
+alias docker-c="docker-compose"
+alias docker-killall=dockerKillAll
+function dockerKillAll() {
+    docker rm -f $(docker ps -a -q)
+}
+alias docker-clean=dockerClean
+function dockerClean() {
+    docker volume rm $(docker volume ls -qf dangling=true)
+}
+
+# Networking
+alias myip="dig +short myip.opendns.com @resolver1.opendns.com"
+alias localip="ipconfig getifaddr en0"
+
+# Vault
+alias gtv="cd $HOME/$WORKSPACE/hashicorp/vault"
+alias gtve="cd $HOME/$WORKSPACE/hashicorp/vault-enterprise"
+alias vault-dev='vault server -dev -dev-root-token-id="root"'
+alias vault-server="vault server -config=$VAULT_CONF/config-file.hcl"
+alias vault-conf="vi $VAULT_CONF"
+alias vt="echo $VAULT_TOKEN"
+
+# Directories
+alias dl="cd ~/Downloads"
+alias dt="cd ~/Desktop"
+alias icloud="cd ~/Library/Mobile\ Documents/com~apple~CloudDocs"
+alias notable="cd ~/Library/Mobile\ Documents/com~apple~CloudDocs/Documents/notable"
+alias wksp="cd $HOME/$WORKSPACE"
+
+# PostgreSQL
+# `export PG_NAME="" && sz` to select database to use for aliasing
+alias pg="echo $PG_NAME"
+alias pg-start="pg_ctl -D /usr/local/var/$PG_NAME -l /usr/local/var/$PG_NAME/server.log start"
+alias pg-stop="pg_ctl -D /usr/local/var/$PG_NAME stop -s -m fast"
+alias pg-reload="pg_ctl -D /usr/local/var/$PG_NAME reload"
+alias pg-restart="pg_ctl -D /usr/local/var/$PG_NAME restart"
+alias pg-status="pg_ctl -D /usr/local/var/$PG_NAME status"
+alias pg-conf="vi /usr/local/var/$PG_NAME"
+alias pg-test="echo /usr/local/var/$PG_NAME"
+
+# Misc
+alias vms="vmrun list"

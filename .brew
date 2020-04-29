@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+
+brew update
+brew upgrade
+brew install findutils --with-default-names
+brew install gnu-sed --with-default-names
+brew install duti
+brew install wget
+brew install gnupg
+brew install dns2tcp
+brew install hashpump
+brew install nmap
+brew install socat
+brew install sqlmap
+brew install tcpflow
+brew install tcpreplay
+brew install tcptrace
+brew install ucspi-tcp
+brew install xz
+brew install ack
+brew install gs
+brew install imagemagick --with-webp
+brew install ssh-copy-id
+brew install tree
+brew cleanup
