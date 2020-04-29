@@ -4,6 +4,7 @@ git pull origin master
 
 function bootstrap() {
 	rsync --exclude ".git/" \
+		--exclude ".gitignore" \
 		--exclude ".DS_Store" \
 		--exclude "bootstrap.sh" \
 		--exclude "README.md" \
