@@ -3,21 +3,22 @@
 # Lint Go code
 # Usage:
 # `go-lint`
-# `go-lint dir1 dir2/... dir3/file1.go`
 # `go-lint ./...`
+# `go-lint dir1 dir2/... dir3/file1.go`
 # `go-lint --new-from-rev=HEAD~1 ./...`
+# `go-lint --new-from-rev=e5925f4 path/to/package`
 function go-lint() {
     golangci-lint run --config ~/.golangci.yml "$@"
 }
 
 # Clean all docker volumes
 function docker-clean() {
-    docker volume rm $(docker volume ls -qf dangling=true)
+    docker volume rm "$(docker volume ls -qf dangling=true)"
 }
 
 # Kill all docker containers
 function docker-killall() {
-    docker rm -f $(docker ps -a -q)
+    docker rm -f "$(docker ps -a -q)"
 }
 
 # Create a new directory and enter it
