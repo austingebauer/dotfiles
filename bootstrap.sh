@@ -9,8 +9,11 @@ function bootstrap() {
 		--exclude "bootstrap.sh" \
 		--exclude "README.md" \
 		--exclude "LICENSE" \
-		-avh --no-perms . ~
-	echo "Done: now run \`pushd ~ && source .zshrc && popd\`"
+		-avh --perms . ~
+	echo "--- Done ---"
+	echo "Run: \`pushd ~ && source .zshrc && popd\`"
+	echo "Run: \`./.macos\`"
+	echo "Run: \`./.brew\`"
 }
 
 if [ "$1" == "--force" ] || [ "$1" == "-f" ]; then
