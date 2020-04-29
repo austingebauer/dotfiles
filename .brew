@@ -2,8 +2,8 @@
 
 brew update
 brew upgrade
-brew install findutils --with-default-names
-brew install gnu-sed --with-default-names
+brew install findutils
+brew install gnu-sed
 brew install duti
 brew install wget
 brew install gnupg
@@ -19,7 +19,7 @@ brew install ucspi-tcp
 brew install xz
 brew install ack
 brew install gs
-brew install imagemagick --with-webp
+brew install imagemagick
 brew install ssh-copy-id
 brew install tree
 brew cleanup
