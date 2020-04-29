@@ -14,13 +14,7 @@ alias kb="kubectl"
 # Docker
 alias docker-c="docker-compose"
 alias docker-killall=dockerKillAll
-function dockerKillAll() {
-    docker rm -f $(docker ps -a -q)
-}
 alias docker-clean=dockerClean
-function dockerClean() {
-    docker volume rm $(docker volume ls -qf dangling=true)
-}
 
 # Networking
 alias myip="dig +short myip.opendns.com @resolver1.opendns.com"

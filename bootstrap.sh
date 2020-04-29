@@ -10,7 +10,7 @@ function bootstrap() {
 		--exclude "README.md" \
 		--exclude "LICENSE" \
 		-avh --no-perms . ~
-	source ~/.zshrc
+	echo "Done: now run \`pushd ~ && source .zshrc && popd\`"
 }
 
 if [ "$1" == "--force" ] || [ "$1" == "-f" ]; then

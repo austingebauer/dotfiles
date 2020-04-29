@@ -1,5 +1,15 @@
 #!/usr/bin/env bash
 
+# Clean all docker volumes
+function dockerClean() {
+    docker volume rm $(docker volume ls -qf dangling=true)
+}
+
+# Kill all docker containers
+function dockerKillAll() {
+    docker rm -f $(docker ps -a -q)
+}
+
 # Create a new directory and enter it
 function mkd() {
 	mkdir -p "$@" && cd "$_";
