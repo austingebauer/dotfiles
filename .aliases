@@ -21,10 +21,11 @@ alias localip="ipconfig getifaddr en0"
 # Vault
 alias gtv="cd $HOME/$WORKSPACE/hashicorp/vault"
 alias gtve="cd $HOME/$WORKSPACE/hashicorp/vault-enterprise"
-alias vault-dev='vault server -dev -dev-root-token-id="root"'
-alias vault-server="vault server -config=$VAULT_CONF/config-file.hcl"
+alias vault-dev='vault server -log-level=trace -dev -dev-root-token-id="root"'
+alias vault-server="vault server -log-level=trace -config=$VAULT_CONF/config-file.hcl"
 alias vault-conf="vi $VAULT_CONF"
 alias vt="echo $VAULT_TOKEN"
+alias vault-fs-clean="rm -rf /etc/vault/filestorage/*"
 
 # Directories
 alias dl="cd ~/Downloads"
