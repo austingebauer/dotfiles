@@ -21,6 +21,7 @@ alias localip="ipconfig getifaddr en0"
 # Vault
 alias gtv="cd $HOME/$WORKSPACE/hashicorp/vault"
 alias gtve="cd $HOME/$WORKSPACE/hashicorp/vault-enterprise"
+alias gte="cd $HOME/$WORKSPACE/hashicorp/environments"
 alias vault-dev='vault server -log-level=trace -dev -dev-root-token-id="root"'
 alias vault-server="vault server -log-level=trace -config=$VAULT_CONF/config-file.hcl"
 alias vault-conf="vi $VAULT_CONF"
