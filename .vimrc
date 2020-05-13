@@ -33,9 +33,6 @@ set backspace=indent,eol,start
 " Optimize for fast terminal connections
 set ttyfast
 
-" Add the g flag to search/replace by default
-set gdefault
-
 " Highlight current line
 set cursorline
 
@@ -61,3 +58,19 @@ let &t_EI = "\<Esc>]50;CursorShape=0\x7" " normal
 
 " Tabs appear as 4 space characters
 set tabstop=4
+
+" Cuts are deletes to the black hole registers
+" This means copy/paste needs to happen deliberately
+nnoremap d "_d
+vnoremap d "_d
+nnoremap D "_D
+vnoremap D "_D
+nnoremap c "_c
+vnoremap c "_c
+nnoremap C "_C
+vnoremap C "_C
+nnoremap x "_x
+vnoremap x "_x
+
+" Backspace behaves as a
+nnoremap <silent> <backspace> a

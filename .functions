@@ -16,6 +16,20 @@ function git-compare() {
     hub compare "$@"
 }
 
+# Vault cluster helper functions
+vault_1() {
+    VAULT_ADDR=http://127.0.0.1:8200 vault $@
+}
+vault_2() {
+    VAULT_ADDR=http://127.0.0.2:8200 vault $@
+}
+vault_3() {
+    VAULT_ADDR=http://127.0.0.3:8200 vault $@
+}
+vault_4() {
+    VAULT_ADDR=http://127.0.0.4:8200 vault $@
+}
+
 # Clean all docker volumes
 function docker-clean() {
     docker volume rm "$(docker volume ls -qf dangling=true)"
