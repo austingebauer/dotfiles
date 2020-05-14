@@ -2,41 +2,58 @@
 
 # Lint Go code
 # Usage:
-# `go-lint`
-# `go-lint ./...`
-# `go-lint dir1 dir2/... dir3/file1.go`
-# `go-lint --new-from-rev=HEAD~1 ./...`
-# `go-lint --new-from-rev=e5925f4 path/to/package`
-function go-lint() {
+# `go_lint`
+# `go_lint ./...`
+# `go_lint dir1 dir2/... dir3/file1.go`
+# `go_lint --new-from-rev=HEAD~1 ./...`
+# `go_lint --new-from-rev=e5925f4 path/to/package`
+function go_lint() {
     golangci-lint run --config ~/.golangci.yml "$@"
 }
 
+# Set the go version
+# Usage:
+# `go_set [from] [to]`
+# `go_set go@1.12 go1.13`
+function go_set() {
+    brew unlink "$1"
+    brew link "$2" --force
+}
+
 # Git compare two branches
-function git-compare() {
+function git_compare() {
     hub compare "$@"
+}
+
+# Tunnel Vault API/UI over SSH
+# Usage:
+# `vault_tun <username>@<remote-address>`
+vault_tun() {
+    # ssh -N -L <local-port>:127.0.0.1:<remote-port> <username>@<remote-address>
+    ssh -N -L 8200:127.0.0.1:8200 "$@"
 }
 
 # Vault cluster helper functions
 vault_1() {
-    VAULT_ADDR=http://127.0.0.1:8200 vault $@
+    VAULT_ADDR=http://127.0.0.1:8200 vault "$@"
 }
 vault_2() {
-    VAULT_ADDR=http://127.0.0.2:8200 vault $@
+    VAULT_ADDR=http://127.0.0.2:8200 vault "$@"
 }
 vault_3() {
-    VAULT_ADDR=http://127.0.0.3:8200 vault $@
+    VAULT_ADDR=http://127.0.0.3:8200 vault "$@"
 }
 vault_4() {
-    VAULT_ADDR=http://127.0.0.4:8200 vault $@
+    VAULT_ADDR=http://127.0.0.4:8200 vault "$@"
 }
 
 # Clean all docker volumes
-function docker-clean() {
+function docker_clean() {
     docker volume rm "$(docker volume ls -qf dangling=true)"
 }
 
 # Kill all docker containers
-function docker-killall() {
+function docker_killall() {
     docker rm -f "$(docker ps -a -q)"
 }
 
