@@ -25,6 +25,9 @@ alias gte="cd $HOME/$WORKSPACE/hashicorp/environments"
 alias vault-dev='vault server -log-level=trace -dev -dev-root-token-id="root"'
 alias vt="echo $VAULT_TOKEN"
 
+# Terraform
+alias tf="terraform"
+
 # Directories
 alias dl="cd ~/Downloads"
 alias dt="cd ~/Desktop"
