@@ -29,7 +29,7 @@ function git_compare() {
 # Usage:
 # `vault_tun <username>@<remote-address>`
 vault_tun() {
-    # ssh -N -L <local-port>:127.0.0.1:<remote-port> <username>@<remote-address>
+    # ssh -N -L <local-port>:<remote-address>:<remote-port> <username>@<remote-address>
     ssh -N -L 8200:127.0.0.1:8200 "$@"
 }
 
