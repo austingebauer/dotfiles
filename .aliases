@@ -23,10 +23,7 @@ alias gtv="cd $HOME/$WORKSPACE/hashicorp/vault"
 alias gtve="cd $HOME/$WORKSPACE/hashicorp/vault-enterprise"
 alias gte="cd $HOME/$WORKSPACE/hashicorp/environments"
 alias vault-dev='vault server -log-level=trace -dev -dev-root-token-id="root"'
-alias vault-server="vault server -log-level=trace -config=$VAULT_CONF/config-file.hcl"
-alias vault-conf="vi $VAULT_CONF"
 alias vt="echo $VAULT_TOKEN"
-alias vault-fs-clean="rm -rf /etc/vault/filestorage/*"
 
 # Directories
 alias dl="cd ~/Downloads"
@@ -34,17 +31,6 @@ alias dt="cd ~/Desktop"
 alias icloud="cd ~/Library/Mobile\ Documents/com~apple~CloudDocs"
 alias notable="cd ~/Library/Mobile\ Documents/com~apple~CloudDocs/Documents/notable"
 alias wksp="cd $HOME/$WORKSPACE"
-
-# PostgreSQL
-# `export PG_NAME="" && sz` to select database to use for aliasing
-alias pg="echo $PG_NAME"
-alias pg-start="pg_ctl -D /usr/local/var/$PG_NAME -l /usr/local/var/$PG_NAME/server.log start"
-alias pg-stop="pg_ctl -D /usr/local/var/$PG_NAME stop -s -m fast"
-alias pg-reload="pg_ctl -D /usr/local/var/$PG_NAME reload"
-alias pg-restart="pg_ctl -D /usr/local/var/$PG_NAME restart"
-alias pg-status="pg_ctl -D /usr/local/var/$PG_NAME status"
-alias pg-conf="vi /usr/local/var/$PG_NAME"
-alias pg-test="echo /usr/local/var/$PG_NAME"
 
 # Misc
 alias vms="vmrun list"

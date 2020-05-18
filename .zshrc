@@ -30,6 +30,3 @@ complete -o nospace -C /Users/austingebauer/go/bin/vault vault
 # Kubernetes
 source <(kubectl completion zsh)
 complete -F __start_kubectl kb
-
-# Terraform
-terraform -install-autocomplete

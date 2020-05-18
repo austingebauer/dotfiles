@@ -14,7 +14,7 @@ function go_lint() {
 # Set the go version
 # Usage:
 # `go_set [from] [to]`
-# `go_set go@1.12 go1.13`
+# `go_set go@1.12 go@1.13`
 function go_set() {
     brew unlink "$1"
     brew link "$2" --force
@@ -23,6 +23,13 @@ function go_set() {
 # Git compare two branches
 function git_compare() {
     hub compare "$@"
+}
+
+# Starts Vault server using the passed config
+# Usage:
+# vault_server config-file.hcl
+vault_server() {
+    vault server -config="$1" > /tmp/vault.log 2>&1 &
 }
 
 # Tunnel Vault API/UI over SSH
