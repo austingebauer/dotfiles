@@ -27,8 +27,8 @@ function git_compare() {
 
 # Starts Vault server using the passed config
 # Usage:
-# vault_server config-file.hcl
-vault_server() {
+# vs config-file.hcl
+vs() {
     vault server -config="$1" > /tmp/vault.log 2>&1 &
 }
 
