@@ -27,6 +27,9 @@ bindkey "^U" backward-kill-line
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /Users/austingebauer/go/bin/vault vault
 
+# Terraform
+mkdir -p ~/.terraform.d/plugins
+
 # Kubernetes
 source <(kubectl completion zsh)
 complete -F __start_kubectl kb
