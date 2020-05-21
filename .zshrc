@@ -15,7 +15,7 @@ plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
 # Load the shell dotfiles:
-for file in ~/.{path,exports,functions,aliases,ignore}; do
+for file in ~/.{exports,path,functions,aliases,ignore}; do
 	[ -r "$file" ] && [ -f "$file" ] && source "$file";
 done;
 unset file;
