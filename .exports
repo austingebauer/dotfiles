@@ -10,7 +10,6 @@ export GOPRIVATE=*github.com/hashicorp*
 # Vault
 # export VAULT_TOKEN="root"
 export VAULT_ADDR="http://127.0.0.1:8200"
-export VAULT_CONF="/etc/vault"
 
 # Vagrant
 export VAGRANT_DEFAULT_PROVIDER="vmware_fusion"
