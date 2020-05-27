@@ -111,6 +111,11 @@ function digg() {
     dig +nocmd "$1" any +multiline +noall +answer
 }
 
+# Inspect x509 certificate
+fuction inspect_x509() {
+    openssl x509 -in "$@" -text -noout
+}
+
 # Show all the names (CNs and SANs) listed in the SSL certificate for a given domain
 function getcertnames() {
     if [ -z "${1}" ]; then
