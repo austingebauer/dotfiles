@@ -112,7 +112,7 @@ function digg() {
 }
 
 # Inspect x509 certificate
-fuction inspect_x509() {
+function inspect_x509() {
     openssl x509 -in "$@" -text -noout
 }
 
