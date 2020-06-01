@@ -28,30 +28,58 @@ function git_compare() {
 # Starts Vault server using the passed config
 # Usage:
 # vs config-file.hcl
-vs() {
+function vs() {
     vault server -config="$1" > /tmp/vault.log 2>&1 &
 }
 
 # Tunnel Vault API/UI over SSH
 # Usage:
 # `vault_tun <username>@<remote-address>`
-vault_tun() {
+function vault_tun() {
     # ssh -N -L <local-port>:<remote-address>:<remote-port> <username>@<remote-address>
     ssh -N -L 8200:127.0.0.1:8200 "$@"
 }
 
 # Vault cluster helper functions
-vault_1() {
+function vault_1() {
     VAULT_ADDR=http://127.0.0.1:8200 vault "$@"
 }
-vault_2() {
+function vault_2() {
     VAULT_ADDR=http://127.0.0.2:8200 vault "$@"
 }
-vault_3() {
+function vault_3() {
     VAULT_ADDR=http://127.0.0.3:8200 vault "$@"
 }
-vault_4() {
+function vault_4() {
     VAULT_ADDR=http://127.0.0.4:8200 vault "$@"
+}
+
+# Tail q.Q logs from Go
+function qq() {
+    clear
+
+    logpath="$TMPDIR/q"
+    if [[ -z "$TMPDIR" ]]; then
+        logpath="/tmp/q"
+    fi
+
+    if [[ ! -f "$logpath" ]]; then
+        echo 'Q LOG' > "$logpath"
+    fi
+
+    tail -100f -- "$logpath"
+}
+
+# Remove and tail q.Q logs from Go
+function rmqq() {
+    logpath="$TMPDIR/q"
+    if [[ -z "$TMPDIR" ]]; then
+        logpath="/tmp/q"
+    fi
+    if [[ -f "$logpath" ]]; then
+        rm "$logpath"
+    fi
+    qq
 }
 
 # Clean all docker volumes
