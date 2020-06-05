@@ -29,7 +29,7 @@ function git_compare() {
 # Usage:
 # vs config-file.hcl
 function vs() {
-    vault server -config="$1" > /tmp/vault.log 2>&1 &
+    vault server -config="$1" >/tmp/vault.log 2>&1 &
 }
 
 # Tunnel Vault API/UI over SSH
@@ -41,17 +41,22 @@ function vault_tun() {
 }
 
 # Vault cluster helper functions
-function vault_1() {
+function v1() {
     VAULT_ADDR=http://127.0.0.1:8200 vault "$@"
 }
-function vault_2() {
+function v2() {
     VAULT_ADDR=http://127.0.0.2:8200 vault "$@"
 }
-function vault_3() {
+function v3() {
     VAULT_ADDR=http://127.0.0.3:8200 vault "$@"
 }
-function vault_4() {
+function v4() {
     VAULT_ADDR=http://127.0.0.4:8200 vault "$@"
+}
+
+# Vault curl shorthand
+function vc() {
+    curl -s --header "X-Vault-Token: $(cat ~/.vault-token)" "$@" | jq
 }
 
 # Tail q.Q logs from Go
@@ -64,7 +69,7 @@ function qq() {
     fi
 
     if [[ ! -f "$logpath" ]]; then
-        echo 'Q LOG' > "$logpath"
+        echo 'Q LOG' >"$logpath"
     fi
 
     tail -100f -- "$logpath"
