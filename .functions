@@ -21,6 +21,11 @@ function go_set() {
 }
 
 # Git compare two branches
+# Usage:
+# `git_compare` -> local branch with master
+# `git_compare <branch>` -> local branch with <branch>
+# `git_compare <branch_1>...<branch_2>`
+# `git_compare <tag_1>...<tag_2>`
 function git_compare() {
     hub compare "$@"
 }
