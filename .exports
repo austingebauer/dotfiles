@@ -17,6 +17,9 @@ export VAGRANT_DEFAULT_PROVIDER="vmware_fusion"
 # Kubernetes
 export KUBECONFIG=$KUBECONFIG:$HOME/$WORKSPACE/vagrant-k8s-cluster/config
 
+# Cloud
+export GOOGLE_APPLICATION_CREDENTIALS="/home/user/Downloads/sa-credentials.json"
+
 # Misc
 export EDITOR='vim'
 export WORKSPACE="Workspace"
