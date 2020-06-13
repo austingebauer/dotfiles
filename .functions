@@ -92,6 +92,16 @@ function rmqq() {
     qq
 }
 
+# Base64 decode the passing string
+function base64_decode() {
+    echo "$@" | base64 --decode
+}
+
+# Base64 encode the passed string
+function base64_encode() {
+    echo "$@" | base64
+}
+
 # Clean all docker volumes
 function docker_clean() {
     docker volume rm "$(docker volume ls -qf dangling=true)"
