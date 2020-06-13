@@ -74,3 +74,6 @@ vnoremap x "_x
 
 " Backspace behaves as a
 nnoremap <silent> <backspace> a
+
+" Visual backspace behaves as c
+vnoremap <silent> <backspace> c
