@@ -77,3 +77,6 @@ nnoremap <silent> <backspace> a
 
 " Visual backspace behaves as c
 vnoremap <silent> <backspace> c
+
+" Enter behaves as i
+nnoremap <silent> <return> i
