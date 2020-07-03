@@ -22,7 +22,6 @@ alias localip="ipconfig getifaddr en0"
 alias gtv="cd $HOME/$WORKSPACE/hashicorp/vault"
 alias gtve="cd $HOME/$WORKSPACE/hashicorp/vault-enterprise"
 alias gte="cd $HOME/$WORKSPACE/hashicorp/environments"
-alias vd='vault server -log-level=trace -dev -dev-root-token-id="root"'
 alias vt="echo $VAULT_TOKEN"
 
 # Terraform

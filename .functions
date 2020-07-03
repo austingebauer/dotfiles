@@ -11,15 +11,6 @@ function go_lint() {
     golangci-lint run --config ~/.golangci.yml "$@"
 }
 
-# Set the go version
-# Usage:
-# `go_set [from] [to]`
-# `go_set go@1.12 go@1.13`
-function go_set() {
-    brew unlink "$1"
-    brew link "$2" --force
-}
-
 # Git compare two branches
 # Usage:
 # `git_compare` -> local branch with master
@@ -28,6 +19,11 @@ function go_set() {
 # `git_compare <tag_1>...<tag_2>`
 function git_compare() {
     hub compare "$@"
+}
+
+# Starts a Vault server in dev mode with in-memory storage
+function vd() {
+    vault server -log-level=trace -dev -dev-root-token-id="root" -dev-plugin-dir="./plugins"
 }
 
 # Starts Vault server using the passed config
@@ -62,6 +58,24 @@ function v4() {
 # Vault curl shorthand
 function vc() {
     curl -s --header "X-Vault-Token: $(cat ~/.vault-token)" "$@" | jq
+}
+
+# Writes a super permissive Vault 'admin' policy
+function vp() {
+    vault policy write admin -<<EOF
+    path "*" {
+        capabilities = ["create", "read", "update", "delete", "list", "sudo"]
+    }
+EOF
+}
+
+# Loads the passed Vault plugin
+# Usage:
+# load_plugin <directory> <name>
+# load_plugin ./plugins/vault-plugin-auth-jwt vault-plugin-auth-jwt
+function load_plugin() {
+    hash=$(shasum -a 256 "$1" | awk '{print $1}')
+    vault write sys/plugins/catalog/auth/"$2" sha_256="$hash" command="$2"
 }
 
 # Tail q.Q logs from Go
