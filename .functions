@@ -23,6 +23,11 @@ function git_compare() {
 
 # Starts a Vault server in dev mode with in-memory storage
 function vd() {
+    vault server -log-level=trace -dev -dev-root-token-id="root"
+}
+
+# Starts a Vault server in dev mode with in-memory storage and a plugin directory
+function vdp() {
     vault server -log-level=trace -dev -dev-root-token-id="root" -dev-plugin-dir="./plugins"
 }
 
