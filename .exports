@@ -5,7 +5,7 @@ export PATH=$(go env GOBIN):$PATH
 export GOPATH=$(go env GOPATH)
 export GOBIN=$(go env GOBIN)
 export GOMODCACHE="$GOPATH/pkg/mod"
-export GOPRIVATE=*github.com/hashicorp*
+export GOPRIVATE="*github.com/hashicorp*"
 
 # Vault
 # export VAULT_TOKEN="root"
