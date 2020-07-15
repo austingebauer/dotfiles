@@ -19,6 +19,7 @@ export KUBECONFIG=$KUBECONFIG:$HOME/$WORKSPACE/vagrant-k8s-cluster/config
 
 # Cloud
 export GOOGLE_APPLICATION_CREDENTIALS="/Users/austingebauer/.gcp/sa-credentials.json"
+export GOOGLE_APPLICATION_CREDENTIALS="/Users/austingebauer/.gcp/gsuite-demo-service-account.json"
 
 # Misc
 export EDITOR='vim'
