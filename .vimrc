@@ -80,3 +80,10 @@ vnoremap <silent> <backspace> c
 
 " Enter behaves as i
 nnoremap <silent> <return> i
+
+" highlight-tab and highlight-shift-tab work for indentation
+nnoremap <Tab> >>_
+nnoremap <S-Tab> <<_
+inoremap <S-Tab> <C-D>
+vnoremap <Tab> >gv
+vnoremap <S-Tab> <gv
