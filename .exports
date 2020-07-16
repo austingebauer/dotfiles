@@ -18,7 +18,7 @@ export VAGRANT_DEFAULT_PROVIDER="vmware_fusion"
 export KUBECONFIG=$KUBECONFIG:$HOME/$WORKSPACE/vagrant-k8s-cluster/config
 
 # Cloud
-export GOOGLE_APPLICATION_CREDENTIALS="/Users/austingebauer/.gcp/sa-credentials.json"
+export GOOGLE_APPLICATION_CREDENTIALS="/Users/austingebauer/.gcp/austin-gebauer-db62ff1c96b4.json"
 export GOOGLE_APPLICATION_CREDENTIALS="/Users/austingebauer/.gcp/gsuite-demo-service-account.json"
 
 # Misc

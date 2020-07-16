@@ -83,8 +83,24 @@ function load_plugin() {
     vault write sys/plugins/catalog/auth/"$2" sha_256="$hash" command="$2"
 }
 
-# Tail q.Q logs from Go
+# Show all q.Q logs from Go
 function qq() {
+    clear
+
+    logpath="$TMPDIR/q"
+    if [[ -z "$TMPDIR" ]]; then
+        logpath="/tmp/q"
+    fi
+
+    if [[ ! -f "$logpath" ]]; then
+        echo 'Q LOG' >"$logpath"
+    fi
+
+    less "$logpath"
+}
+
+# Tail q.Q logs from Go
+function tailqq() {
     clear
 
     logpath="$TMPDIR/q"
