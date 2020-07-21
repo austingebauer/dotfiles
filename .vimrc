@@ -6,9 +6,6 @@ set scrolloff=10
 " Allows the left, right, h, and l keys to wrap around lines
 set whichwrap+=<,>,[,]
 
-" Enable line numbers
-set number
-
 " Highlight searches
 set hlsearch
 
