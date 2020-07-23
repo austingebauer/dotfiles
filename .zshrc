@@ -33,3 +33,7 @@ mkdir -p ~/.terraform.d/plugins
 # Kubernetes
 source <(kubectl completion zsh)
 complete -F __start_kubectl kb
+
+# gcloud
+if [ -f '/Users/austingebauer/Workspace/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/austingebauer/Workspace/google-cloud-sdk/path.zsh.inc'; fi
+if [ -f '/Users/austingebauer/Workspace/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/austingebauer/Workspace/google-cloud-sdk/completion.zsh.inc'; fi
