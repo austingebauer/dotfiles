@@ -231,3 +231,8 @@ function getcertnames() {
         return 1
     fi
 }
+
+# Runs proselint against all files in the current directory
+function prose_lint() {
+    proselint $(find . -type f)
+}
