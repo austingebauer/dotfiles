@@ -22,6 +22,7 @@ unset file;
 
 # Keybindings
 bindkey "^U" backward-kill-line
+bindkey '\t' autosuggest-accept
 
 # Vault
 autoload -U +X bashcompinit && bashcompinit

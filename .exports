@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 
 # Golang
-export PATH=$(go env GOBIN):$PATH
 export GOPATH=$(go env GOPATH)
 export GOBIN=$(go env GOBIN)
 export GOMODCACHE="$GOPATH/pkg/mod"
@@ -24,3 +23,9 @@ export GOOGLE_APPLICATION_CREDENTIALS="/Users/austingebauer/.gcp/austin-gebauer-
 # Misc
 export EDITOR='vim'
 export WORKSPACE="Workspace"
+
+# zsh
+export ZSH_AUTOSUGGEST_STRATEGY=(
+    history
+    completion
+)
