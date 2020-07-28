@@ -72,8 +72,8 @@ vnoremap x "_x
 " Backspace behaves as a
 nnoremap <silent> <backspace> a
 
-" Visual backspace behaves as c
-vnoremap <silent> <backspace> c
+" Visual backspace behaves as "_c
+vnoremap <silent> <backspace> "_c
 
 " Enter behaves as i
 nnoremap <silent> <return> i
