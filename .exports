@@ -20,8 +20,9 @@ export KUBECONFIG=$KUBECONFIG:$HOME/$WORKSPACE/vagrant-k8s-cluster/config
 export EDITOR='vim'
 export WORKSPACE="Workspace"
 
+# Disabling for now.
 # zsh
-export ZSH_AUTOSUGGEST_STRATEGY=(
-    history
-    completion
-)
+#export ZSH_AUTOSUGGEST_STRATEGY=(
+#    completion
+#    history
+#)
