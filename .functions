@@ -28,7 +28,7 @@ function vd() {
 
 # Starts a Vault server in dev mode with in-memory storage and a plugin directory
 function vdp() {
-    vault server -log-level=trace -dev -dev-root-token-id="root" -dev-plugin-dir="./bin"
+    vault server -log-level=trace -dev -dev-root-token-id="root" -dev-plugin-dir="./plugins"
 }
 
 # Starts Vault server using the passed config
