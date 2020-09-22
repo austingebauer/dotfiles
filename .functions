@@ -138,9 +138,14 @@ function base64_encode() {
     echo "$@" | base64
 }
 
-# Clean all docker volumes
+# Clean docker resources including:
+#  - all stopped containers
+#  - all networks not used by at least one container
+#  - all dangling images
+#  - all dangling build cache
 function docker_clean() {
     docker volume rm "$(docker volume ls -qf dangling=true)"
+    docker system prune
 }
 
 # Kill all docker containers
