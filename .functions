@@ -22,13 +22,18 @@ function git_compare() {
 }
 
 # Starts a Vault server in dev mode with in-memory storage
-function vd() {
+function vsd() {
     vault server -log-level=trace -dev -dev-root-token-id="root"
 }
 
 # Starts a Vault server in dev mode with in-memory storage and a plugin directory
 function vdp() {
     vault server -log-level=trace -dev -dev-root-token-id="root" -dev-plugin-dir="./plugins"
+}
+
+# Starts a Consul server in dev mode
+function csd() {
+    consul agent -dev > /tmp/consul.log 2>&1 &
 }
 
 # Starts Vault server using the passed config
