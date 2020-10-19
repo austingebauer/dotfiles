@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
 # Golang
-export GOPATH=$(go env GOPATH)
-export GOBIN=$(go env GOBIN)
+export GOPATH="$HOME/go"
+export GOBIN="$HOME/go/bin"
 export GOMODCACHE="$GOPATH/pkg/mod"
 export GOPRIVATE="*github.com/hashicorp*"
 
