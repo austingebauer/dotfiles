@@ -40,7 +40,7 @@ function csd() {
 # Usage:
 # vs config-file.hcl
 function vs() {
-    vault server -config="$1" >/tmp/vault.log 2>&1 &
+    vault server -config="$1" > /tmp/vault.log 2>&1 &
 }
 
 # Tunnel Vault API/UI over SSH
