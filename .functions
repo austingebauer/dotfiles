@@ -31,16 +31,20 @@ function vdp() {
     vault server -log-level=trace -dev -dev-root-token-id="root" -dev-plugin-dir="./plugins"
 }
 
-# Starts a Consul server in dev mode
-function csd() {
-    consul agent -dev > /tmp/consul.log 2>&1 &
-}
-
 # Starts Vault server using the passed config
 # Usage:
 # vs config-file.hcl
 function vs() {
-    vault server -config="$1" > /tmp/vault.log 2>&1 &
+    vault server -config="$1" >/tmp/vault.log 2>&1 &
+}
+
+function vcd() {
+
+}
+
+# Starts a Consul server in dev mode
+function csd() {
+    consul agent -dev >/tmp/consul.log 2>&1 &
 }
 
 # Tunnel Vault API/UI over SSH
@@ -72,7 +76,7 @@ function vc() {
 
 # Writes a super permissive Vault 'admin' policy
 function vp() {
-    vault policy write admin -<<EOF
+    vault policy write admin - <<EOF
     path "*" {
         capabilities = ["create", "read", "update", "delete", "list", "sudo"]
     }

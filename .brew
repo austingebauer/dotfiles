@@ -26,4 +26,5 @@ brew install golangci/tap/golangci-lint
 brew install hub
 brew install azure-cli
 brew install openssl
+brew install pv
 brew cleanup
