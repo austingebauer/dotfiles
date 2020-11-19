@@ -27,5 +27,5 @@ brew install hub
 brew install azure-cli
 brew install openssl
 brew install pv
-brew install doitlive
+brew install curl-openssl
 brew cleanup
