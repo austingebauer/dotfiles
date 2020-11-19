@@ -26,6 +26,8 @@ alias vt="echo $VAULT_TOKEN"
 
 # Terraform
 alias tf="terraform"
+alias tfd="terraform destroy -force"
+alias tfa="terraform apply -auto-approve"
 
 # Directories
 alias dl="cd ~/Downloads"
