@@ -11,6 +11,11 @@ function go_lint() {
     golangci-lint run --config ~/.golangci.yml "$@"
 }
 
+# Serve godoc from localhost:6060
+function go_doc() {
+    godoc -http=:6060
+}
+
 # Git compare two branches
 # Usage:
 # `git_compare` -> local branch with master
