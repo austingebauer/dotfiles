@@ -38,10 +38,6 @@ function vs() {
     vault server -config="$1" >/tmp/vault.log 2>&1 &
 }
 
-function vcd() {
-
-}
-
 # Starts a Consul server in dev mode
 function csd() {
     consul agent -dev >/tmp/consul.log 2>&1 &
