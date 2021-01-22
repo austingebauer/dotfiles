@@ -28,4 +28,5 @@ brew install azure-cli
 brew install openssl
 brew install pv
 brew install curl-openssl
+brew install graphviz
 brew cleanup
