@@ -12,6 +12,7 @@ function bootstrap() {
 	echo "Run: \`pushd ~ && source .zshrc && popd\`"
 	echo "Run: \`./.macos\`"
 	echo "Run: \`./.brew\`"
+	echo "Run: \`./.gotools\`"
 }
 
 if [ "$1" == "--force" ] || [ "$1" == "-f" ]; then
