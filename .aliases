@@ -33,7 +33,7 @@ alias tfa="terraform apply -auto-approve"
 alias dl="cd ~/Downloads"
 alias dt="cd ~/Desktop"
 alias icloud="cd ~/Library/Mobile\ Documents/com~apple~CloudDocs"
-alias notable="cd ~/Library/Mobile\ Documents/com~apple~CloudDocs/Documents/notable"
+alias notable="cd ~/Library/Mobile\ Documents/com~apple~CloudDocs/Documents/Notes"
 alias wksp="cd $HOME/$WORKSPACE"
 
 # GCP
