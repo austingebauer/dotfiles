@@ -224,6 +224,12 @@ function digg() {
     dig +nocmd "$1" any +multiline +noall +answer
 }
 
+# Generate an RSA public/private keypair PEMs
+function gen_rsa_pem() {
+    openssl genrsa -out private-key.pem 2048
+    openssl rsa -in private-key.pem -pubout -out public-key.pem
+}
+
 # Inspect x509 certificate
 function inspect_x509() {
     openssl x509 -in "$@" -text -noout
