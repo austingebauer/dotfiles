@@ -17,15 +17,8 @@ export VAGRANT_DEFAULT_PROVIDER="vmware_fusion"
 export KUBECONFIG=$KUBECONFIG:$HOME/$WORKSPACE/vagrant-k8s-cluster/config
 
 # AWS
-export AWS_REGION="us-west-2"
+export AWS_REGION="us-west-1"
 
 # Misc
 export EDITOR='vim'
 export WORKSPACE="Workspace"
-
-# Disabling for now.
-# zsh
-#export ZSH_AUTOSUGGEST_STRATEGY=(
-#    completion
-#    history
-#)
