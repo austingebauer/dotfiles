@@ -18,6 +18,9 @@ alias docker-c="docker-compose"
 alias myip="dig +short myip.opendns.com @resolver1.opendns.com"
 alias localip="ipconfig getifaddr en0"
 
+# Go
+alias gvt="go mod vendor && go mod tidy"
+
 # Vault
 alias gtv="cd $HOME/$WORKSPACE/hashicorp/vault"
 alias gtve="cd $HOME/$WORKSPACE/hashicorp/vault-enterprise"
@@ -41,3 +44,4 @@ alias gcurl='curl --header "Authorization: Bearer $(gcloud auth print-identity-t
 
 # Misc
 alias vms="vmrun list"
+alias snowsql="/Applications/SnowSQL.app/Contents/MacOS/snowsql"
