@@ -187,6 +187,11 @@ function pwdcp() {
     pwd | pbcopy
 }
 
+# Minify JSON using jq
+function json_minify() {
+    jq -c . < "$@"
+}
+
 # Determine size of a file or total size of a directory
 function fs() {
     if du -b /dev/null >/dev/null 2>&1; then
