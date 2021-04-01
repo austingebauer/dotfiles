@@ -192,7 +192,7 @@ function json_minify() {
     jq -c . < "$@"
 }
 
-# Minify JSON using jq
+# Escape JSON using jq
 function json_escape() {
     json_minify "$@" | jq -R
 }
