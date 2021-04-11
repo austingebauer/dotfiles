@@ -30,4 +30,5 @@ brew install pv
 brew install curl-openssl
 brew install graphviz
 brew install --cask snowflake-snowsql
+brew install clang-format
 brew cleanup
