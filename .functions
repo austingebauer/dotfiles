@@ -196,7 +196,7 @@ function pwdcp() {
 
 # Minify JSON using jq
 function json_minify() {
-    jq -c . <"$@"
+    jq -c . < "$@"
 }
 
 # Escape JSON using jq
