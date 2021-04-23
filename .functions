@@ -1,5 +1,12 @@
 #!/usr/bin/env bash
 
+# Decodes a JWT into readable claims
+# Usage:
+# jwt_decode "header.payload.signature"
+function jwt_decode() {
+    echo "$1" | jwt decode -
+}
+
 # Lint Go code
 # Usage:
 # `go_lint`
@@ -189,7 +196,7 @@ function pwdcp() {
 
 # Minify JSON using jq
 function json_minify() {
-    jq -c . < "$@"
+    jq -c . <"$@"
 }
 
 # Escape JSON using jq
