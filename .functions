@@ -52,6 +52,17 @@ function vsd() {
     vault server -log-level=trace -dev -dev-root-token-id="root"
 }
 
+# Start Vault servers listening on different addresses
+function vsd1() {
+    VAULT_DEV_LISTEN_ADDRESS="127.0.0.1:8200" vault server -log-level=trace -dev -dev-root-token-id="root"
+}
+function vsd2() {
+    VAULT_DEV_LISTEN_ADDRESS="127.0.0.2:8200" vault server -log-level=trace -dev -dev-root-token-id="root"
+}
+function vsd3() {
+    VAULT_DEV_LISTEN_ADDRESS="127.0.0.3:8200" vault server -log-level=trace -dev -dev-root-token-id="root"
+}
+
 # Starts a Vault server in dev mode with in-memory storage and a plugin directory
 function vdp() {
     vault server -log-level=trace -dev -dev-root-token-id="root" -dev-plugin-dir="/Users/austingebauer/Workspace/hashicorp/environments/vault/server/standalone/plugins"

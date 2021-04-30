@@ -33,4 +33,5 @@ brew install --cask snowflake-snowsql
 brew install clang-format
 brew tap mike-engel/jwt-cli
 brew install jwt-cli
+brew install mkcert
 brew cleanup
