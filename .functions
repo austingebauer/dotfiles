@@ -104,7 +104,7 @@ function v4() {
 
 # Vault curl shorthand
 function vc() {
-    curl --header "X-Vault-Token: $(cat ~/.vault-token)" "$@" | jq
+    curl --header "X-Vault-Token: $(cat ~/.vault-token)" --header "X-Vault-Namespace: $VAULT_NAMESPACE" "$@" | jq
 }
 
 # Writes a super permissive Vault 'admin' policy
