@@ -126,6 +126,20 @@ function load_plugin() {
     vault write sys/plugins/catalog/"$1"/"$3" sha_256="$hash" command="$3"
 }
 
+# TODO: fix this
+# Initializes, unseals, and logs into Vault with the root token.
+# This is used for development purposes.
+function init_unseal() {
+    INIT_RESPONSE=$(vault operator init -format=json -key-shares 1 -key-threshold 1)
+    UNSEAL_KEY=$(echo "$INIT_RESPONSE" | jq -r .unseal_keys_b64[0])
+    ROOT_TOKEN=$(echo "$INIT_RESPONSE" | jq -r .root_token)
+
+    echo "Unseal key: $UNSEAL_KEY"
+    echo "Root token: $ROOT_TOKEN"
+    vault operator unseal "${UNSEAL_KEY}"
+    vault login "${ROOT_TOKEN}"
+}
+
 # Show all q.Q logs from Go
 function qq() {
     clear
@@ -207,7 +221,7 @@ function pwdcp() {
 
 # Minify JSON using jq
 function json_minify() {
-    jq -c . < "$@"
+    jq -c . <"$@"
 }
 
 # Escape JSON using jq
