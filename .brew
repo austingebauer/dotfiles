@@ -36,4 +36,5 @@ brew install jwt-cli
 brew install mkcert
 brew install oauth2l
 brew install gradle
+brew install protobuf
 brew cleanup
