@@ -19,7 +19,7 @@ alias myip="dig +short myip.opendns.com @resolver1.opendns.com"
 alias localip="ipconfig getifaddr en0"
 
 # Go
-alias gvt="go mod vendor && go mod tidy"
+alias gmt="go mod tidy"
 
 # Vault
 alias gtv="cd $HOME/$WORKSPACE/hashicorp/vault"
