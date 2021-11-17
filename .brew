@@ -38,6 +38,8 @@ brew install oauth2l
 brew install gradle
 brew install protobuf
 brew install valgrind
+brew install gh
+brew install bats-core
 
 # Need -l readline gcc compiler flag to use on MacOS
 brew install readline
