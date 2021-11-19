@@ -5,6 +5,7 @@ export GOPATH="$HOME/go"
 export GOBIN="$HOME/go/bin"
 export GOMODCACHE="$GOPATH/pkg/mod"
 export GOPRIVATE="*github.com/hashicorp*"
+export GOPROXY="https://proxy.golang.org,direct"
 
 # Vault
 export VAULT_ADDR="http://127.0.0.1:8200"
