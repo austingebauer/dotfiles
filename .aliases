@@ -26,6 +26,7 @@ alias gtv="cd $HOME/$WORKSPACE/hashicorp/vault"
 alias gtve="cd $HOME/$WORKSPACE/hashicorp/vault-enterprise"
 alias gte="cd $HOME/$WORKSPACE/hashicorp/environments"
 alias vt="echo $VAULT_TOKEN"
+alias vlr="vault login root"
 
 # Terraform
 alias tf="terraform"
