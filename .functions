@@ -65,7 +65,14 @@ function vsd3() {
 
 # Starts a Vault server in dev mode with in-memory storage and a plugin directory
 function vdp() {
-    vault server -log-level=trace -dev -dev-root-token-id="root" -dev-plugin-dir="/Users/austingebauer/Workspace/hashicorp/environments/vault/server/standalone/plugins"
+    vault server -log-level=trace -dev -dev-root-token-id="root" -dev-plugin-dir="${PLUGIN_DIR}"
+}
+
+# Copies the passed plugin binary to my development plugin directory
+# Usage
+# copy_plugin_dir ./bin/vault-plugin-auth-jwt
+function copy_plugin_dir() {
+    cp "$1" "${PLUGIN_DIR}"
 }
 
 # Starts Vault server using the passed config
