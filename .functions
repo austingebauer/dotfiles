@@ -87,6 +87,11 @@ function csd() {
     consul agent -dev >/tmp/consul.log 2>&1 &
 }
 
+# Starts a Waypoint server
+function wsd() {
+    waypoint server run -accept-tos >/tmp/waypoint.log 2>&1 &
+}
+
 # Tunnel Vault API/UI over SSH
 # Usage:
 # `vault_tun <username>@<remote-address>`
