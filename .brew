@@ -41,6 +41,13 @@ brew install valgrind
 brew install gh
 brew install bats-core
 
+# MacOS g++/gcc uses clang
+# This should install g++-11/gcc-11
+brew install gcc
+
+# oneAPI threading building blocks
+brew install tbb
+
 # Need -l readline gcc compiler flag to use on MacOS
 brew install readline
 
