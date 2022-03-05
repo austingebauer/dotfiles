@@ -48,6 +48,9 @@ brew install gcc
 # oneAPI threading building blocks
 brew install tbb
 
+# OpenMP libraries and headers
+brew install libomp
+
 # Need -l readline gcc compiler flag to use on MacOS
 brew install readline
 
