@@ -75,6 +75,16 @@ function copy_plugin_dir() {
     cp "$1" "${PLUGIN_DIR}"
 }
 
+# Loads the passed Vault plugin
+# Usage:
+# load_plugin <type> <plugin_name> <command_name>
+# load_plugin secrets vault-plugin-secrets-keymgmt vault-plugin-secrets-keymgmt
+# load_plugin auth vault-plugin-auth-jwt vault-plugin-auth-jwt
+function load_plugin() {
+    hash=$(shasum -a 256 "${PLUGIN_DIR}/$2" | awk '{print $1}')
+    vault write sys/plugins/catalog/"$1"/"$3" sha_256="$hash" command="$3"
+}
+
 # Starts Vault server using the passed config
 # Usage:
 # vs config-file.hcl
@@ -126,16 +136,6 @@ function vp() {
         capabilities = ["create", "read", "update", "delete", "list", "sudo"]
     }
 EOF
-}
-
-# Loads the passed Vault plugin
-# Usage:
-# load_plugin <type> <directory> <name>
-# load_plugin secrets ./plugins/vault-plugin-secrets-keymgmt vault-plugin-secrets-keymgmt
-# load_plugin auth ./plugins/vault-plugin-auth-jwt vault-plugin-auth-jwt
-function load_plugin() {
-    hash=$(shasum -a 256 "$2" | awk '{print $1}')
-    vault write sys/plugins/catalog/"$1"/"$3" sha_256="$hash" command="$3"
 }
 
 # TODO: fix this
