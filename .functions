@@ -78,7 +78,7 @@ function copy_plugin_dir() {
 # Loads the passed Vault plugin
 # Usage:
 # load_plugin <type> <command_name> <plugin_name>
-# load_plugin secrets vault-plugin-secrets-keymgmt vault-plugin-secrets-keymgmt
+# load_plugin secret vault-plugin-secrets-keymgmt vault-plugin-secrets-keymgmt
 # load_plugin auth vault-plugin-auth-jwt vault-plugin-auth-jwt
 function load_plugin() {
     hash=$(shasum -a 256 "${PLUGIN_DIR}/$2" | awk '{print $1}')
