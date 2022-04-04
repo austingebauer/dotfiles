@@ -1,3 +1,4 @@
 #!/usr/bin/env bash
 
-go get golang.org/x/exp/cmd/modgraphviz
+go install golang.org/x/exp/cmd/modgraphviz
+go install github.com/go-delve/delve/cmd/dlv@latest
