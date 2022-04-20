@@ -40,6 +40,7 @@ brew install protobuf
 brew install valgrind
 brew install gh
 brew install bats-core
+brew install mongosh
 
 # MacOS g++/gcc uses clang
 # This should install g++-11/gcc-11

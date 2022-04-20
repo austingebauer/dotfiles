@@ -313,9 +313,14 @@ function gen_rsa_pem() {
     openssl rsa -in private-key.pem -pubout -out public-key.pem
 }
 
-# Inspect x509 certificate
-function inspect_x509() {
+# Inspect X.509 certificate contents
+function x509_contents() {
     openssl x509 -in "$@" -text -noout
+}
+
+# Get PEM-encoded public key from X.509 certificate
+function x509_pubkey() {
+    openssl x509 -in "$@" -noout -pubkey
 }
 
 # Show all the names (CNs and SANs) listed in the SSL certificate for a given domain
