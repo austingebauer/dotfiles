@@ -323,6 +323,15 @@ function x509_pubkey() {
     openssl x509 -in "$@" -noout -pubkey
 }
 
+# Inspect certificate signing request (CSR)
+function x509_csr() {
+    openssl req -text -noout -verify -in "$@"
+}
+
+function x509_ca_verify() {
+    openssl verify -CAfile "$1" "$2"
+}
+
 # Show all the names (CNs and SANs) listed in the SSL certificate for a given domain
 function getcertnames() {
     if [ -z "${1}" ]; then
