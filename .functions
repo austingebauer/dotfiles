@@ -113,7 +113,7 @@ function bsd() {
 
 # Tunnel Vault API/UI over SSH
 # Usage:
-# `vault_tun <username>@<remote-address>`
+# vault_tun <username>@<remote-address>
 function vault_tun() {
     # ssh -N -L <local-port>:<remote-address>:<remote-port> <username>@<remote-address>
     ssh -N -L 8200:127.0.0.1:8200 "$@"
@@ -145,6 +145,14 @@ function vp() {
         capabilities = ["create", "read", "update", "delete", "list", "sudo"]
     }
 EOF
+}
+
+# vstacks dumps goroutine stacks for Vault with the given pid.
+# The goroutine stacks will be in the Vault logs.
+# Usage:
+# vstacks <vault_pid>
+function vstacks() {
+    kill -SIGUSR2 "$1"
 }
 
 # TODO: fix this
