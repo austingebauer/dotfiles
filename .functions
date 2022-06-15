@@ -70,23 +70,28 @@ function vdp() {
 
 # Copies the passed plugin binary to my development plugin directory
 # Usage
-# copy_plugin_dir ./bin/vault-plugin-auth-jwt
-function copy_plugin_dir() {
+# copy_plugin ./bin/vault-plugin-auth-jwt
+function copy_plugin() {
     cp "$1" "${PLUGIN_DIR}"
 }
 
 # Loads the passed Vault plugin
 # Usage:
-# load_plugin <type> <command_name> <plugin_name>
-# load_plugin secret vault-plugin-secrets-keymgmt vault-plugin-secrets-keymgmt
-# load_plugin auth vault-plugin-auth-jwt vault-plugin-auth-jwt
-function load_plugin() {
-    hash=$(shasum -a 256 "${PLUGIN_DIR}/$2" | awk '{print $1}')
+# register_plugin <plugin_type> <plugin_command> <plugin_name>
+# register_plugin secret vault-plugin-secrets-keymgmt vault-plugin-secrets-keymgmt-ext
+# register_plugin auth vault-plugin-auth-jwt vault-plugin-auth-jwt-ext
+# register_plugin database vault-plugin-database-snowflake vault-plugin-database-snowflake-ext
+function register_plugin() {      
+    PLUGIN_TYPE="$1"
+    PLUGIN_CMD="$2"
+    PLUGIN_NAME="$3"
+    PLUGIN_BINARY="${PLUGIN_DIR}/${PLUGIN_CMD}"
+    SHA256=$(shasum -a 256 "${PLUGIN_BINARY}" | cut -f 1 -d ' ')
     vault plugin register \
-      -sha256="$hash" \
-      -command="$2" \
-      "$1" \
-      "$3"
+        -sha256="${SHA256}" \
+        -command="${PLUGIN_CMD}" \
+        "${PLUGIN_TYPE}" \
+        "${PLUGIN_NAME}"
 }
 
 # Starts Vault server using the passed config
