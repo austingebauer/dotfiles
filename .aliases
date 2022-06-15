@@ -46,4 +46,3 @@ alias gcurl='curl --header "Authorization: Bearer $(gcloud auth print-identity-t
 
 # Misc
 alias vms="vmrun list"
-alias snowsql="/Applications/SnowSQL.app/Contents/MacOS/snowsql"
