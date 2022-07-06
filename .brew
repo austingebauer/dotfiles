@@ -43,6 +43,8 @@ brew install gh
 brew install bats-core
 brew install mongosh
 brew install hugo
+brew reinstall kubernetes-cli
+brew install kind
 
 # MacOS g++/gcc uses clang
 # This should install g++-11/gcc-11
