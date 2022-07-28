@@ -137,6 +137,12 @@ function v3() {
 function v4() {
     VAULT_ADDR=http://127.0.0.4:8200 vault "$@"
 }
+function v5() {
+    VAULT_ADDR=http://127.0.0.5:8200 vault "$@"
+}
+function v6() {
+    VAULT_ADDR=http://127.0.0.6:8200 vault "$@"
+}
 
 # Vault curl shorthand
 function vc() {
