@@ -241,8 +241,7 @@ function base64_encode() {
 #  - all dangling images
 #  - all dangling build cache
 function docker_clean() {
-    docker volume rm "$(docker volume ls -qf dangling=true)"
-    docker system prune
+    docker system prune --all --volumes
 }
 
 # Kill all docker containers
