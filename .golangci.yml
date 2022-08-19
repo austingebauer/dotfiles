@@ -9,12 +9,12 @@ linters:
   disable-all: true
   enable:
     - bodyclose
-    - deadcode
+    - staticcheck
     - govet
     - gosec
+    - deadcode
     - ineffassign
     - misspell
-    - staticcheck
     - unconvert
 
 linters-settings:

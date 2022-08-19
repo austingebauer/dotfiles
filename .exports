@@ -13,7 +13,7 @@ export GOPROXY="https://proxy.golang.org,direct"
 
 # Vault
 export VAULT_ADDR="http://127.0.0.1:8200"
-export PLUGIN_DIR="/Users/austingebauer/Workspace/hashicorp/environments/vault/server/standalone/plugins"
+export PLUGIN_DIR="/Users/austingebauer/Workspace/hashicorp/environments/vault/plugins/binaries"
 export VAULT_CLIENT_TIMEOUT=6000
 
 # Vagrant
