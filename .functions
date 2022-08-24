@@ -54,9 +54,9 @@ function vs() {
     vault server -config="$1" >/tmp/vault.log 2>&1 &
 }
 
-# Starts a Vault server in dev mode with in-memory storage
+# Starts a Vault server in dev mode with in-memory storage and a plugin directory
 function vsd() {
-    vault server -log-level=trace -dev -dev-root-token-id="root"
+    vault server -log-level=trace -dev -dev-root-token-id="root" -dev-plugin-dir="${PLUGIN_DIR}"
 }
 
 # Start Vault servers listening on different addresses
@@ -70,13 +70,8 @@ function vsd3() {
     VAULT_DEV_LISTEN_ADDRESS="127.0.0.3:8200" vault server -log-level=trace -dev -dev-root-token-id="root"
 }
 
-# Starts a Vault server in dev mode with in-memory storage and a plugin directory
-function vdp() {
-    vault server -log-level=trace -dev -dev-root-token-id="root" -dev-plugin-dir="${PLUGIN_DIR}"
-}
-
 # Starts a Vault server in with a Consul storage backend
-function vdc() {
+function vsc() {
     vault server -config=/Users/austingebauer/Workspace/hashicorp/environments/vault/server/standalone/config-consul.hcl > /tmp/vault.log 2>&1 &
 }
 
