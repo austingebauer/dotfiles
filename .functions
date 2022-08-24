@@ -47,6 +47,13 @@ function git_compare() {
     hub compare "$@"
 }
 
+# Starts Vault server using the passed config
+# Usage:
+# vs config-file.hcl
+function vs() {
+    vault server -config="$1" >/tmp/vault.log 2>&1 &
+}
+
 # Starts a Vault server in dev mode with in-memory storage
 function vsd() {
     vault server -log-level=trace -dev -dev-root-token-id="root"
@@ -66,6 +73,11 @@ function vsd3() {
 # Starts a Vault server in dev mode with in-memory storage and a plugin directory
 function vdp() {
     vault server -log-level=trace -dev -dev-root-token-id="root" -dev-plugin-dir="${PLUGIN_DIR}"
+}
+
+# Starts a Vault server in with a Consul storage backend
+function vdc() {
+    vault server -config=/Users/austingebauer/Workspace/hashicorp/environments/vault/server/standalone/config-consul.hcl > /tmp/vault.log 2>&1 &
 }
 
 # Copies the passed plugin binary to my development plugin directory
@@ -92,13 +104,6 @@ function register_plugin() {
         -command="${PLUGIN_CMD}" \
         "${PLUGIN_TYPE}" \
         "${PLUGIN_NAME}"
-}
-
-# Starts Vault server using the passed config
-# Usage:
-# vs config-file.hcl
-function vs() {
-    vault server -config="$1" >/tmp/vault.log 2>&1 &
 }
 
 # Starts a Consul server in dev mode
@@ -391,5 +396,5 @@ function getcertnames() {
 
 # Runs proselint against all files in the current directory
 function prose_lint() {
-    proselint $(find . -type f)
+    proselint "$(find . -type f)"
 }
