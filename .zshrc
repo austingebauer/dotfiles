@@ -15,6 +15,10 @@ plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
+# Installed from the homebrew package. This can also be 
+# installed via an oh-my-zsh plugin as noted above.
+source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+
 # Load the shell dotfiles:
 for file in ~/.{exports,path,functions,aliases,ignore}; do
 	[ -r "$file" ] && [ -f "$file" ] && source "$file";

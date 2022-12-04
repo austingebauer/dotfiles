@@ -45,6 +45,7 @@ brew install mongosh
 brew install hugo
 brew reinstall kubernetes-cli
 brew install kind
+brew install zsh-autosuggestions
 
 # MacOS g++/gcc uses clang
 # This should install g++-11/gcc-11

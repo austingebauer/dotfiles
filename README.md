@@ -1,6 +1,6 @@
 # dotfiles
 
-The dotfiles I use to configure macOS and various other tools
+The dotfiles I use to configure macOS and various other tools.
 
 ## Installation
 
