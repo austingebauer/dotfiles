@@ -1,5 +1,8 @@
 syntax on
 
+" Show line numbers
+set number
+
 " Start scrolling 10 lines before the horizontal window border
 set scrolloff=10
 
