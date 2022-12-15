@@ -158,12 +158,18 @@ function vp() {
 EOF
 }
 
-# vstacks dumps goroutine stacks for Vault with the given pid.
+# vault_stack_dump dumps goroutine stacks for Vault with the given pid.
 # The goroutine stacks will be in the Vault logs.
 # Usage:
-# vstacks <vault_pid>
-function vstacks() {
+# vault_stack_dump <vault_pid>
+function vault_stack_dump() {
     kill -SIGUSR2 "$1"
+}
+
+# vault_audit tails the audit logs for auditing setup by vsd
+function vault_audit() {
+    vault audit enable file file_path="${VAULT_AUDIT_FILE}"
+    tail -f "${VAULT_AUDIT_FILE}" | jq
 }
 
 # Initializes, unseals, and logs into Vault with the root token.
