@@ -8,3 +8,4 @@ export PATH=$GOBIN:$PATH
 export PATH=$HOME/go/go1.19.1/bin:$PATH
 export PATH="/usr/local/opt/curl-openssl/bin:$PATH"
 export PATH="/Applications/SnowSQL.app/Contents/MacOS:$PATH"
+export PATH="$HOME/google-cloud-sdk/bin:$PATH"
