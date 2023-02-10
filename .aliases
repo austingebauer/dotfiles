@@ -30,7 +30,7 @@ alias vlr="vault login root"
 
 # Terraform
 alias tf="terraform"
-alias tfd="terraform destroy -force"
+alias tfd="terraform destroy -auto-approve"
 alias tfa="terraform apply -auto-approve"
 
 # Directories
