@@ -47,6 +47,7 @@ brew reinstall kubernetes-cli
 brew install kind
 brew install zsh-autosuggestions
 brew install qt
+brew install git-lfs
 
 # MacOS g++/gcc uses clang
 # This should install g++-11/gcc-11
