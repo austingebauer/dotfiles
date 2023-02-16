@@ -48,6 +48,12 @@ brew install kind
 brew install zsh-autosuggestions
 brew install qt
 brew install git-lfs
+brew tap hashicorp/internal git@github.com:hashicorp/homebrew-internal.git
+brew install hashicorp/internal/hcloud
+brew install hashicorp/internal/roam
+brew tap hashicorp/security git@github.com:hashicorp/homebrew-security.git
+brew install hashicorp/security/doormat-cli
+brew install --cask docker
 
 # MacOS g++/gcc uses clang
 # This should install g++-11/gcc-11

@@ -29,6 +29,18 @@ unset file;
 bindkey "^U" backward-kill-line
 # bindkey '\t' autosuggest-accept
 
+# HCP
+# used by internal tooling, requires authentication via the GitHub cli
+echo 'export GITHUB_TOKEN="$(gh config get -h github.com oauth_token)"' >> ${ZDOTDIR:-~}/.zshrc
+# used by Homebrew to access private assets
+echo 'export HOMEBREW_GITHUB_API_TOKEN="${GITHUB_TOKEN}"' >> ${ZDOTDIR:-~}/.zshrc
+# hcloud autocomplete
+if which hcloud > /dev/null; then
+  complete -C $(which hcloud) hcloud
+fi
+# direnv for roam
+eval "$(direnv hook zsh)"
+
 # Vault
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /Users/austingebauer/go/bin/vault vault
