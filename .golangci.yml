@@ -11,7 +11,7 @@ linters:
     - staticcheck
     - govet
     - gosec
-    - deadcode
+    - unused
     - ineffassign
     - misspell
     - unconvert
