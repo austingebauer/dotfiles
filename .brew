@@ -54,6 +54,7 @@ brew install hashicorp/internal/roam
 brew tap hashicorp/security git@github.com:hashicorp/homebrew-security.git
 brew install hashicorp/security/doormat-cli
 brew install --cask docker
+brew install sshuttle
 
 # MacOS g++/gcc uses clang
 # This should install g++-11/gcc-11
