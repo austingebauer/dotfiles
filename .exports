@@ -13,7 +13,7 @@ export GOPROXY="https://proxy.golang.org,direct"
 
 # Vault
 export VAULT_ADDR="http://localhost:8200"
-export PLUGIN_DIR="/Users/austingebauer/Workspace/hashicorp/environments/vault/plugins/binaries"
+export PLUGIN_DIR="$HOME/Workspace/hashicorp/environments/vault/plugins/binaries"
 export VAULT_CLIENT_TIMEOUT=6000
 export VAULT_AUDIT_FILE="/tmp/vault_audit.log"
 

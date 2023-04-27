@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/austingebauer/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 # Set theme: https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="robbyrussell"
@@ -17,7 +17,7 @@ source $ZSH/oh-my-zsh.sh
 
 # Installed from the homebrew package. This can also be 
 # installed via an oh-my-zsh plugin as noted above.
-source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # Load the shell dotfiles:
 for file in ~/.{exports,path,functions,aliases,ignore}; do
@@ -43,7 +43,7 @@ eval "$(direnv hook zsh)"
 
 # Vault
 autoload -U +X bashcompinit && bashcompinit
-complete -o nospace -C /Users/austingebauer/go/bin/vault vault
+complete -o nospace -C $HOME/go/bin/vault vault
 
 # Terraform
 mkdir -p ~/.terraform.d/plugins
@@ -53,11 +53,11 @@ source <(kubectl completion zsh)
 complete -F __start_kubectl kb
 
 # gcloud
-if [ -f '/Users/austingebauer/Workspace/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/austingebauer/Workspace/google-cloud-sdk/path.zsh.inc'; fi
-if [ -f '/Users/austingebauer/Workspace/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/austingebauer/Workspace/google-cloud-sdk/completion.zsh.inc'; fi
+if [ -f "$HOME/Workspace/google-cloud-sdk/path.zsh.inc" ]; then . "$HOME/Workspace/google-cloud-sdk/path.zsh.inc"; fi
+if [ -f "$HOME/Workspace/google-cloud-sdk/completion.zsh.inc" ]; then . "$HOME/Workspace/google-cloud-sdk/completion.zsh.inc"; fi
 
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/austingebauer/Workspace/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/austingebauer/Workspace/google-cloud-sdk/path.zsh.inc'; fi
+if [ -f "$HOME/Workspace/google-cloud-sdk/path.zsh.inc" ]; then . "$HOME/Workspace/google-cloud-sdk/path.zsh.inc"; fi
 
 # The next line enables shell command completion for gcloud.
-if [ -f '/Users/austingebauer/Workspace/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/austingebauer/Workspace/google-cloud-sdk/completion.zsh.inc'; fi
+if [ -f "$HOME/Workspace/google-cloud-sdk/completion.zsh.inc" ]; then . "$HOME/Workspace/google-cloud-sdk/completion.zsh.inc"; fi
