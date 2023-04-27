@@ -47,6 +47,20 @@ function git_compare() {
     hub compare "$@"
 }
 
+# Get an access token from an HCP service principal
+# Usage:
+# `hcp_access_token <client_id> <client_secret>`
+function hcp_access_token() {
+  curl --silent --request POST --header "Content-Type: application/json" \
+  --data '{
+    "audience": "https://api.hashicorp.cloud",
+    "grant_type": "client_credentials",
+    "client_id": "'"$1"'",
+    "client_secret": "'"$2"'"
+  }' \
+      https://auth.hashicorp.com/oauth/token | jq '.access_token' --raw-output
+}
+
 # Starts Vault server using the passed config
 # Usage:
 # vs config-file.hcl
