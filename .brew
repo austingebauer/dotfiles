@@ -58,6 +58,7 @@ arch -arm64 brew install mysqladmin
 arch -arm64 brew install sentry-cli
 arch -arm64 brew install direnv
 arch -arm64 brew install postgresql
+arch -arm64 brew install getsentry/tools/sentry-cli
 
 # MacOS g++/gcc uses clang
 # This should install g++-11/gcc-11
