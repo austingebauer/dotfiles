@@ -60,6 +60,7 @@ arch -arm64 brew install direnv
 arch -arm64 brew install postgresql
 arch -arm64 brew install getsentry/tools/sentry-cli
 arch -arm64 brew install golangci-lint
+arch -arm64 brew install gofumpt
 
 # MacOS g++/gcc uses clang
 # This should install g++-11/gcc-11
