@@ -23,7 +23,6 @@ linters:
 linters-settings:
   govet:
     enable-all: true
-
   misspell:
     locale: US
     ignore-words:
