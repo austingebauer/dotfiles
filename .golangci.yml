@@ -5,9 +5,9 @@ run:
   tests: true
   skip-dirs: 
     - proto-vendor
-    
+
   modules-download-mode: readonly
-  
+
 output:
   sort-results: true
 
