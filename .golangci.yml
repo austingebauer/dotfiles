@@ -1,8 +1,15 @@
-# Example at: https://github.com/golangci/golangci-lint/blob/master/.golangci.example.yml
+# Example at: https://github.com/golangci/golangci-lint/blob/master/.golangci.reference.yml
 
 run:
   timeout: 5m
   tests: true
+  skip-dirs: 
+    - proto-vendor
+    
+  modules-download-mode: readonly
+  
+output:
+  sort-results: true
 
 linters:
   enable:
@@ -23,6 +30,9 @@ linters:
 linters-settings:
   govet:
     enable-all: true
+    disable:
+      - fieldalignment
+      - shadow
   misspell:
     locale: US
     ignore-words:
