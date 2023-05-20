@@ -15,7 +15,7 @@ function jwt_decode() {
 # `go_lint --new-from-rev=HEAD~1 ./...`
 # `go_lint --new-from-rev=e5925f4 path/to/package`
 function go_lint() {
-    golangci-lint run --config ~/.golangci.yml "$@"
+    golangci-lint run --config ~/.golangci.yml "$@" --skip-dirs=proto-vendor
 }
 
 # Serve godoc from localhost:6060
