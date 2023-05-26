@@ -24,6 +24,6 @@ export VAGRANT_DEFAULT_PROVIDER="vmware_fusion"
 # export KUBECONFIG=$HOME/$WORKSPACE/vagrant-k8s-cluster/config
 
 # AWS
-export AWS_REGION="us-west-1"
 export AWS_DEFAULT_OUTPUT="json"
 export AWS_PAGER=""
+export AWS_PROFILE="default"
