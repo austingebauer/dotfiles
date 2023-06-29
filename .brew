@@ -2,6 +2,7 @@
 
 arch -arm64 brew update
 arch -arm64 brew upgrade
+arch -arm64 brew tap hashicorp/tap
 arch -arm64 brew install findutils
 arch -arm64 brew install gnu-sed
 arch -arm64 brew install duti
@@ -21,7 +22,6 @@ arch -arm64 brew install ack
 arch -arm64 brew install gs
 arch -arm64 brew install ssh-copy-id
 arch -arm64 brew install tree
-arch -arm64 brew install golangci-lint
 arch -arm64 brew install staticcheck
 arch -arm64 brew install azure-cli
 arch -arm64 brew install openssl
@@ -62,6 +62,7 @@ arch -arm64 brew install getsentry/tools/sentry-cli
 arch -arm64 brew install golangci-lint
 arch -arm64 brew install gofumpt
 arch -arm64 brew install diffutils
+arch -arm64 brew install vlt
 
 # MacOS g++/gcc uses clang
 # This should install g++-11/gcc-11
