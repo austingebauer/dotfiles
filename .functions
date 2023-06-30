@@ -15,6 +15,8 @@ function jwt_decode() {
 # `go_lint --new-from-rev=HEAD~1 ./...`
 # `go_lint --new-from-rev=e5925f4 path/to/package`
 function go_lint() {
+    # TODO: golangci-lint run --config /Users/agebauer/Workspace/hashicorp/cloud-vault-secrets/.modules/cloud-makefiles/golangci/config.yml --skip-dirs=proto-vendor
+    #  Consider differences here with above
     golangci-lint run --config ~/.golangci.yml "$@"
 }
 
