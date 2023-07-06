@@ -63,6 +63,7 @@ arch -arm64 brew install golangci-lint
 arch -arm64 brew install gofumpt
 arch -arm64 brew install diffutils
 arch -arm64 brew install vlt
+arch -arm64 brew install node
 
 # MacOS g++/gcc uses clang
 # This should install g++-11/gcc-11
