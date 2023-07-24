@@ -65,6 +65,7 @@ arch -arm64 brew install diffutils
 arch -arm64 brew install vlt
 arch -arm64 brew install node
 arch -arm64 brew install watch
+arch -arm64 brew install supabase/tap/supabase
 
 # MacOS g++/gcc uses clang
 # This should install g++-11/gcc-11
