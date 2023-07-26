@@ -268,7 +268,7 @@ function docker_clean() {
 
 # Kill all docker containers
 function docker_killall() {
-    docker rm -f "$(docker ps -a -q)"
+    docker stop $(docker ps -q) && docker rm $(docker ps -aq)
 }
 
 # Create a new directory and enter it
