@@ -21,12 +21,6 @@ bin
 *.tar
 *.zip
 
-# Logs and databases #
-######################
-*.log
-*.sql
-*.sqlite
-
 # OS generated files #
 ######################
 .DS_Store
