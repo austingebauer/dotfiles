@@ -75,6 +75,11 @@ function vsd() {
     vault server -log-level=trace -dev -dev-root-token-id="root" -dev-plugin-dir="${PLUGIN_DIR}"
 }
 
+# Starts a Vault server in dev mode with in-memory storage, a plugin directory, and TLS
+function vsdtls() {
+    vault server -log-level=trace -dev-tls -dev-tls-cert-dir="$HOME/vault-dev-tls-dir" -dev-root-token-id="root" -dev-plugin-dir="${PLUGIN_DIR}"
+}
+
 # Start Vault servers listening on different ports
 function vsd1() {
     VAULT_DEV_LISTEN_ADDRESS="127.0.0.1:8200" vault server -log-level=trace -dev -dev-root-token-id="root"

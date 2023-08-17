@@ -65,7 +65,6 @@ arch -arm64 brew install diffutils
 arch -arm64 brew install vlt
 arch -arm64 brew install node
 arch -arm64 brew install watch
-arch -arm64 brew install supabase/tap/supabase
 arch -arm64 brew install stripe/stripe-cli/stripe
 
 # MacOS g++/gcc uses clang
