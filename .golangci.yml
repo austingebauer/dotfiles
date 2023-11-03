@@ -25,7 +25,6 @@ linters:
     - gosimple
     - stylecheck
     - goimports
-    - depguard
 
 linters-settings:
   govet:
