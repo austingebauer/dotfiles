@@ -359,14 +359,16 @@ function heictojpg() {
     find . -type f -iname "*.heic" | while read f
     do
         # Convert heic to jpg.
-        magick "$f" -quality 80 "$f.jpg" # Version 7.x required.
-    
+        # shellcheck disable=SC2001
+        local name=$(echo "$f" | sed -e "s/.heic//gI")
+        magick "$f" -quality 80 "$name.jpg"
+
         # Delete the original heic file.
         if [ $? -eq 0 ]; then
             rm "$f"
         fi
     done
-} 
+}
 
 # Run `dig` and display the most useful info
 function digg() {
