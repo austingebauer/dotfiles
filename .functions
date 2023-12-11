@@ -354,6 +354,20 @@ function gz() {
     printf "gzip: %d bytes (%2.2f%%)\n" "$gzipsize" "$ratio"
 }
 
+# heictojpg converts all .heic images in the current directory to .jpg
+function heictojpg() {
+    find . -type f -iname "*.heic" | while read f
+    do
+        # Convert heic to jpg.
+        magick "$f" -quality 80 "$f.jpg" # Version 7.x required.
+    
+        # Delete the original heic file.
+        if [ $? -eq 0 ]; then
+            rm "$f"
+        fi
+    done
+} 
+
 # Run `dig` and display the most useful info
 function digg() {
     dig +nocmd "$1" any +multiline +noall +answer
