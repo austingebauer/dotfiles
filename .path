@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+export PATH="$GOBIN:$PATH"
 export PATH="$HOME/Workspace/hashicorp/cloud-sre/bin:$PATH"
 export PATH="$HOME/cloud-makefiles/bin:$PATH"
 export PATH=$HOME/Library/Python/2.7/bin:$PATH
@@ -10,4 +11,3 @@ export PATH="/usr/local/opt/curl-openssl/bin:$PATH"
 export PATH="/Applications/SnowSQL.app/Contents/MacOS:$PATH"
 export PATH="/opt/homebrew/anaconda3/bin:$PATH"
 export PATH="$HOME/google-cloud-sdk/bin:$PATH"
-export PATH="$GOBIN:$PATH"
