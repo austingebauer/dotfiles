@@ -15,4 +15,6 @@
 [pull]
         rebase = false
 [init]
-    defaultBranch = main
+        defaultBranch = main
+[url "git@github.com:"]
+        insteadOf = https://github.com/

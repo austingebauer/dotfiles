@@ -8,7 +8,7 @@ export WORKSPACE="Workspace"
 export GOPATH="$HOME/go"
 export GOBIN="$HOME/go/bin"
 export GOMODCACHE="$GOPATH/pkg/mod"
-export GOPRIVATE="*github.com/hashicorp*"
+export GOPRIVATE="github.com/hashicorp/*"
 export GOPROXY="https://proxy.golang.org,direct"
 
 # Vault
