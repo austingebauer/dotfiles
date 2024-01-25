@@ -35,6 +35,13 @@ function go_test_cover() {
     go tool cover -html=coverage.out
 }
 
+# Compiles all go tests without executing them
+# Usage:
+# `go_test_compile_all`
+function go_test_compile_all() {
+    go test -c -o /dev/null "$(go list -f '{{if .TestGoFiles}}{{.ImportPath}}{{end}}' ./...)"
+}
+
 # Generate and open a dependency graph for Go modules
 function go_mod_graph() {
     go mod graph | modgraphviz | dot -Tpng -o graph.png && open graph.png
