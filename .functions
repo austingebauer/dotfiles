@@ -39,7 +39,7 @@ function go_test_cover() {
 # Usage:
 # `go_test_compile_all`
 function go_test_compile_all() {
-    go test -c -o /dev/null "$(go list -f '{{if .TestGoFiles}}{{.ImportPath}}{{end}}' ./...)"
+    go test -c -o /dev/null $(go list -f '{{if .TestGoFiles}}{{.ImportPath}}{{end}}' ./...)
 }
 
 # Generate and open a dependency graph for Go modules
