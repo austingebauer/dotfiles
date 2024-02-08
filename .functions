@@ -304,6 +304,11 @@ function json_escape() {
     json_minify "$@" | jq -R
 }
 
+# Function to escape and encode PEM certificates for inclusion in JSON
+escape_certificate() {
+  gsed -E ':a;N;$!ba;s/\r{0,1}\n/\\n/g' "$1"
+}
+
 # Determine size of a file or total size of a directory
 function fs() {
     if du -b /dev/null >/dev/null 2>&1; then

@@ -70,6 +70,7 @@ arch -arm64 brew install --cask anaconda
 arch -arm64 brew install ghostscript
 arch -arm64 brew install imagemagick
 arch -arm64 brew install helm
+arch -arm64 brew install hashicorp/security/scan
 
 # MacOS g++/gcc uses clang
 # This should install g++-11/gcc-11
