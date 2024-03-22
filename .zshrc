@@ -29,6 +29,18 @@ unset file;
 bindkey "^U" backward-kill-line
 # bindkey '\t' autosuggest-accept
 
+# HCP
+# used by internal tooling, requires authentication via the GitHub cli
+echo 'export GITHUB_TOKEN="$(gh config get -h github.com oauth_token)"' >> ${ZDOTDIR:-~}/.zshrc
+
+# used by Homebrew to access private assets
+echo 'export HOMEBREW_GITHUB_API_TOKEN="${GITHUB_TOKEN}"' >> ${ZDOTDIR:-~}/.zshrc
+
+# hcloud autocomplete
+if which hcloud > /dev/null; then
+  complete -C $(which hcloud) hcloud
+fi
+
 # Vault
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C $HOME/go/bin/vault vault
@@ -54,14 +66,5 @@ if [ -f "$HOME/Workspace/google-cloud-sdk/completion.zsh.inc" ]; then . "$HOME/W
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 
-# HCP
-# used by internal tooling, requires authentication via the GitHub cli
-echo 'export GITHUB_TOKEN="$(gh config get -h github.com oauth_token)"' >> ${ZDOTDIR:-~}/.zshrc
-# used by Homebrew to access private assets
-echo 'export HOMEBREW_GITHUB_API_TOKEN="${GITHUB_TOKEN}"' >> ${ZDOTDIR:-~}/.zshrc
-# hcloud autocomplete
-if which hcloud > /dev/null; then
-  complete -C $(which hcloud) hcloud
-fi
 # direnv for roam
 eval "$(direnv hook zsh)"
