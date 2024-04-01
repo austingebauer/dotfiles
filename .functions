@@ -382,6 +382,10 @@ function heictojpg() {
     done
 }
 
+function unix_to_date() {
+    date -r "$1"
+}
+
 # Run `dig` and display the most useful info
 function digg() {
     dig +nocmd "$1" any +multiline +noall +answer
