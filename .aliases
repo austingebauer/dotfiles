@@ -33,6 +33,9 @@ alias tf="terraform"
 alias tfd="terraform destroy -auto-approve"
 alias tfa="terraform apply -auto-approve"
 
+# HVS
+alias gthvs="cd $HOME/$WORKSPACE/hashicorp/cloud-vault-secrets"
+
 # Directories
 alias dl="cd ~/Downloads"
 alias dt="cd ~/Desktop"
