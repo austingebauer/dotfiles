@@ -57,18 +57,31 @@ function git_compare() {
     hub compare "$@"
 }
 
-# Get an access token from an HCP service principal
+# Get an access token for an HCP service principal in a particular environment.
+#
 # Usage:
-# `hcp_access_token <client_id> <client_secret>`
+# `hcp_access_token <prde|dev|int|prod> <client_id> <client_secret>`
 function hcp_access_token() {
-  curl --silent --request POST --header "Content-Type: application/json" \
-  --data '{
-    "audience": "https://api.hashicorp.cloud",
-    "grant_type": "client_credentials",
-    "client_id": "'"$1"'",
-    "client_secret": "'"$2"'"
-  }' \
-      https://auth.hashicorp.com/oauth/token | jq '.access_token' --raw-output
+    local host=""
+    if [[ "$1" == "prde" ]]; then
+        host="https://agebauer01-1zvvln91.dev.pedp-remote.hashicorp.services/oauth/token"
+    elif [[ "$1" == "dev" ]]; then
+        host="https://auth.idp.hcp.dev/oauth/token"
+    elif [[ "$1" == "int" ]]; then
+        host="https://auth.idp.hcp.to/oauth/token"
+    elif [[ "$1" == "prod" ]]; then
+        host="https://auth.hashicorp.com/oauth/token"
+    else
+        echo "Environment must be: prde, dev, int, prod"
+    fi
+
+    curl --silent --request POST --header "Content-Type: application/json" \
+    --data '{
+        "audience": "https://api.hashicorp.cloud",
+        "grant_type": "client_credentials",
+        "client_id": "'"$2"'",
+        "client_secret": "'"$3"'"
+    }' "$host" | jq
 }
 
 # Starts Vault server using the passed config
