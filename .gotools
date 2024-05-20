@@ -8,3 +8,4 @@ go install golang.org/x/tools/cmd/goimports@latest
 go install github.com/vektra/mockery/v2@v2.20.0
 go install golang.org/x/tools/cmd/godoc@latest
 go install golang.org/x/tools/cmd/stress@latest
+go install github.com/square/certigo@latest
