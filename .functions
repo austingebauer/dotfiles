@@ -283,6 +283,26 @@ function base64_encode() {
     echo "$@" | base64
 }
 
+# TODO: never got this working outside of Go
+# aws_console_url returns a console URL from an assumed role.
+# Usage:
+# aws_console_url <role_arn>
+#function aws_console_url() {
+#    # Assume the role
+#    ASSUME_ROLE_OUTPUT=$(aws sts assume-role --role-arn "$1" --role-session-name "austin-session-name")
+#    ACCESS_KEY=$(echo "$ASSUME_ROLE_OUTPUT" | jq -r .Credentials.AccessKeyId)
+#    SECRET_KEY=$(echo "$ASSUME_ROLE_OUTPUT" | jq -r .Credentials.SecretAccessKey)
+#    SESSION_TOKEN=$(echo "$ASSUME_ROLE_OUTPUT" | jq -r .Credentials.SessionToken)
+#    SESSION_DATA=$(python3 -c "import urllib.parse; print(urllib.parse.quote('{"sessionId":"$ACCESS_KEY","sessionKey":"$SECRET_KEY","sessionToken":"$SESSION_TOKEN"}'))")
+#
+#    # Get the sign-in token
+#    SIGNIN_TOKEN=$(curl -X GET "https://signin.aws.amazon.com/federation?Action=getSigninToken&SessionDuration=3600&Session=${SESSION_DATA}" | jq -r .SigninToken)
+#
+#    # Generate the console URL
+#    CONSOLE_URL="https://signin.aws.amazon.com/federation?Action=login&Issuer=Example&Destination=https%3A%2F%2Fconsole.aws.amazon.com%2F&SigninToken=$SIGNIN_TOKEN"
+#    echo "$CONSOLE_URL"
+#}
+
 # Clean docker resources including:
 #  - all stopped containers
 #  - all networks not used by at least one container
