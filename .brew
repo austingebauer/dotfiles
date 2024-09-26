@@ -72,7 +72,6 @@ arch -arm64 brew install imagemagick
 arch -arm64 brew install helm
 arch -arm64 brew install hashicorp/security/scan
 arch -arm64 brew install grpcui
-arch -arm64 brew install bufbuild/buf/buf
 
 # MacOS g++/gcc uses clang
 # This should install g++-11/gcc-11
