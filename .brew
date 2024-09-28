@@ -1,89 +1,89 @@
 #!/usr/bin/env bash
 
-arch -arm64 brew update
-arch -arm64 brew upgrade
-arch -arm64 brew tap hashicorp/tap
-arch -arm64 brew install findutils
-arch -arm64 brew install gnu-sed
-arch -arm64 brew install duti
-arch -arm64 brew install wget
-arch -arm64 brew install gnupg
-arch -arm64 brew install dns2tcp
-arch -arm64 brew install hashpump
-arch -arm64 brew install nmap
-arch -arm64 brew install socat
-arch -arm64 brew install sqlmap
-arch -arm64 brew install tcpflow
-arch -arm64 brew install tcpreplay
-arch -arm64 brew install tcptrace
-arch -arm64 brew install ucspi-tcp
-arch -arm64 brew install xz
-arch -arm64 brew install ack
-arch -arm64 brew install gs
-arch -arm64 brew install ssh-copy-id
-arch -arm64 brew install tree
-arch -arm64 brew install staticcheck
-arch -arm64 brew install azure-cli
-arch -arm64 brew install openssl
-arch -arm64 brew install pv
-arch -arm64 brew install curl-openssl
-arch -arm64 brew install graphviz
-arch -arm64 brew install --cask snowflake-snowsql
-arch -arm64 brew install clang-format
-arch -arm64 brew tap mike-engel/jwt-cli
-arch -arm64 brew install jwt-cli
-arch -arm64 brew install mkcert
-arch -arm64 brew install oauth2l
-arch -arm64 brew install gradle
-arch -arm64 brew install protobuf
-arch -arm64 brew install valgrind
-arch -arm64 brew install gh
-arch -arm64 brew install bats-core
-arch -arm64 brew install mongosh
-arch -arm64 brew install hugo
-arch -arm64 brew reinstall kubernetes-cli
-arch -arm64 brew install kind
-arch -arm64 brew install zsh-autosuggestions
-arch -arm64 brew install qt
-arch -arm64 brew install git-lfs
+brew update
+brew upgrade
+brew tap hashicorp/tap
+brew install findutils
+brew install gnu-sed
+brew install duti
+brew install wget
+brew install gnupg
+brew install dns2tcp
+brew install hashpump
+brew install nmap
+brew install socat
+brew install sqlmap
+brew install tcpflow
+brew install tcpreplay
+brew install tcptrace
+brew install ucspi-tcp
+brew install xz
+brew install ack
+brew install gs
+brew install ssh-copy-id
+brew install tree
+brew install staticcheck
+brew install azure-cli
+brew install openssl
+brew install pv
+brew install curl-openssl
+brew install graphviz
+brew install --cask snowflake-snowsql
+brew install clang-format
+brew tap mike-engel/jwt-cli
+brew install jwt-cli
+brew install mkcert
+brew install oauth2l
+brew install gradle
+brew install protobuf
+brew install valgrind
+brew install gh
+brew install bats-core
+brew install mongosh
+brew install hugo
+brew reinstall kubernetes-cli
+brew install kind
+brew install zsh-autosuggestions
+brew install qt
+brew install git-lfs
 brew tap hashicorp/internal git@github.com:hashicorp/homebrew-internal.git
-arch -arm64 brew install hashicorp/internal/hcloud
-arch -arm64 brew install hashicorp/internal/roam
+brew install hashicorp/internal/hcloud
+brew install hashicorp/internal/roam
 brew tap hashicorp/security git@github.com:hashicorp/homebrew-security.git
-arch -arm64 brew install hashicorp/security/doormat-cli
-arch -arm64 brew install --cask docker
-arch -arm64 brew install sshuttle
-arch -arm64 brew install mysql
-arch -arm64 brew install mysqladmin
-arch -arm64 brew install sentry-cli
-arch -arm64 brew install direnv
-arch -arm64 brew install postgresql
-arch -arm64 brew install getsentry/tools/sentry-cli
-arch -arm64 brew install golangci-lint
-arch -arm64 brew install gofumpt
-arch -arm64 brew install diffutils
-arch -arm64 brew install vlt
-arch -arm64 brew install node
-arch -arm64 brew install watch
-arch -arm64 brew install stripe/stripe-cli/stripe
-arch -arm64 brew install --cask anaconda
-arch -arm64 brew install ghostscript
-arch -arm64 brew install imagemagick
-arch -arm64 brew install helm
-arch -arm64 brew install hashicorp/security/scan
-arch -arm64 brew install grpcui
+brew install hashicorp/security/doormat-cli
+brew install --cask docker
+brew install sshuttle
+brew install mysql
+brew install mysqladmin
+brew install sentry-cli
+brew install direnv
+brew install postgresql
+brew install getsentry/tools/sentry-cli
+brew install golangci-lint
+brew install gofumpt
+brew install diffutils
+brew install vlt
+brew install node
+brew install watch
+brew install stripe/stripe-cli/stripe
+brew install --cask anaconda
+brew install ghostscript
+brew install imagemagick
+brew install helm
+brew install hashicorp/security/scan
+brew install grpcui
 
 # MacOS g++/gcc uses clang
 # This should install g++-11/gcc-11
-arch -arm64 brew install gcc
+brew install gcc
 
 # oneAPI threading building blocks
-arch -arm64 brew install tbb
+brew install tbb
 
 # OpenMP libraries and headers
-arch -arm64 brew install libomp
+brew install libomp
 
 # Need -l readline gcc compiler flag to use on MacOS
-arch -arm64 brew install readline
+brew install readline
 
-arch -arm64 brew cleanup
+brew cleanup

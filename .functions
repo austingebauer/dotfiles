@@ -16,8 +16,6 @@ function jwt_decode() {
 # `go_lint --new-from-rev=HEAD~1 ./...`
 # `go_lint --new-from-rev=e5925f4 path/to/package`
 function go_lint() {
-    # TODO: golangci-lint run --config /Users/agebauer/Workspace/hashicorp/cloud-vault-secrets/.modules/cloud-makefiles/golangci/config.yml --skip-dirs=proto-vendor
-    #  Consider differences here with above
     golangci-lint run --config ~/.golangci.yml "$@"
 }
 
@@ -57,31 +55,18 @@ function git_compare() {
     hub compare "$@"
 }
 
-# Get an access token for an HCP service principal in a particular environment.
+# Get an access token for an HCP service principal.
 #
 # Usage:
-# `hcp_access_token <prde|dev|int|prod> <client_id> <client_secret>`
+# `hcp_access_token <client_id> <client_secret>`
 function hcp_access_token() {
-    local host=""
-    if [[ "$1" == "prde" ]]; then
-        host="https://agebauer01-1zvvln91.dev.pedp-remote.hashicorp.services/oauth/token"
-    elif [[ "$1" == "dev" ]]; then
-        host="https://auth.idp.hcp.dev/oauth/token"
-    elif [[ "$1" == "int" ]]; then
-        host="https://auth.idp.hcp.to/oauth/token"
-    elif [[ "$1" == "prod" ]]; then
-        host="https://auth.hashicorp.com/oauth/token"
-    else
-        echo "Environment must be: prde, dev, int, prod"
-    fi
-
     curl --silent --request POST --header "Content-Type: application/json" \
     --data '{
         "audience": "https://api.hashicorp.cloud",
         "grant_type": "client_credentials",
-        "client_id": "'"$2"'",
-        "client_secret": "'"$3"'"
-    }' "$host" | jq
+        "client_id": "'"$1"'",
+        "client_secret": "'"$2"'"
+    }' "https://auth.hashicorp.com/oauth/token" | jq
 }
 
 # Starts Vault server using the passed config

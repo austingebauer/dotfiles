@@ -33,18 +33,12 @@ alias tf="terraform"
 alias tfd="terraform destroy -auto-approve"
 alias tfa="terraform apply -auto-approve"
 
-# HVS
-alias gthvs="cd $HOME/$WORKSPACE/hashicorp/cloud-vault-secrets"
-
 # Directories
 alias dl="cd ~/Downloads"
 alias dt="cd ~/Desktop"
 alias icloud="cd ~/Library/Mobile\ Documents/com~apple~CloudDocs"
 alias notes="cd ~/Library/Mobile\ Documents/iCloud\~md\~obsidian/Documents/notes"
 alias wksp="cd $HOME/$WORKSPACE"
-
-# GCP
-alias gcurl='curl --header "Authorization: Bearer $(gcloud auth print-identity-token)"'
 
 # Misc
 alias vms="vmrun list"
