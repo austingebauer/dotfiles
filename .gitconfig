@@ -2,7 +2,7 @@
         name = Austin Gebauer
         email = gebauer.austin@gmail.com
 [core]
-        excludesfile = /Users/agebauer/.gitignore_global
+        excludesfile = ~/.gitignore_global
 [pager]
         branch = false
 [filter "lfs"]

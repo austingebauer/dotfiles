@@ -1,3 +1,5 @@
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
@@ -27,44 +29,6 @@ unset file;
 
 # Keybindings
 bindkey "^U" backward-kill-line
-# bindkey '\t' autosuggest-accept
-
-# HCP
-# used by internal tooling, requires authentication via the GitHub cli
-echo 'export GITHUB_TOKEN="$(gh config get -h github.com oauth_token)"' >> ${ZDOTDIR:-~}/.zshrc
-
-# used by Homebrew to access private assets
-echo 'export HOMEBREW_GITHUB_API_TOKEN="${GITHUB_TOKEN}"' >> ${ZDOTDIR:-~}/.zshrc
-
-# hcloud autocomplete
-if which hcloud > /dev/null; then
-  complete -C $(which hcloud) hcloud
-fi
-
-# Vault
-autoload -U +X bashcompinit && bashcompinit
-complete -o nospace -C $HOME/go/bin/vault vault
 
 # Terraform
 mkdir -p ~/.terraform.d/plugins
-
-# Kubernetes
-source <(kubectl completion zsh)
-complete -F __start_kubectl kb
-
-# gcloud
-if [ -f "$HOME/Workspace/google-cloud-sdk/path.zsh.inc" ]; then . "$HOME/Workspace/google-cloud-sdk/path.zsh.inc"; fi
-if [ -f "$HOME/Workspace/google-cloud-sdk/completion.zsh.inc" ]; then . "$HOME/Workspace/google-cloud-sdk/completion.zsh.inc"; fi
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f "$HOME/Workspace/google-cloud-sdk/path.zsh.inc" ]; then . "$HOME/Workspace/google-cloud-sdk/path.zsh.inc"; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f "$HOME/Workspace/google-cloud-sdk/completion.zsh.inc" ]; then . "$HOME/Workspace/google-cloud-sdk/completion.zsh.inc"; fi
-
-# NVM
-export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
-
-# direnv for roam
-eval "$(direnv hook zsh)"

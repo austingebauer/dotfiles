@@ -7,8 +7,7 @@ brew install gnu-sed
 brew install wget
 brew install tree
 brew install openssl
-brew tap mike-engel/jwt-cli
-brew install jwt-cli
+brew install mike-engel/jwt-cli/jwt-cli
 brew install zsh-autosuggestions
 brew install watch
 brew cleanup
