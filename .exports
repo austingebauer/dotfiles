@@ -19,9 +19,6 @@ export VAULT_AUDIT_FILE="/tmp/vault_audit.log"
 # Vagrant
 export VAGRANT_DEFAULT_PROVIDER="vmware_fusion"
 
-# Kubernetes
-# export KUBECONFIG=$HOME/$WORKSPACE/vagrant-k8s-cluster/config
-
 # AWS
 export AWS_DEFAULT_OUTPUT="json"
 export AWS_PAGER=""
