@@ -10,4 +10,5 @@ brew install openssl
 brew install mike-engel/jwt-cli/jwt-cli
 brew install zsh-autosuggestions
 brew install watch
+brew install docker-compose
 brew cleanup
