@@ -11,4 +11,6 @@ brew install mike-engel/jwt-cli/jwt-cli
 brew install zsh-autosuggestions
 brew install watch
 brew install docker-compose
+brew tap hashicorp/tap
+brew install hashicorp/tap/terraform
 brew cleanup
