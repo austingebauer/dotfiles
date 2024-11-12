@@ -22,8 +22,8 @@ alias localip="ipconfig getifaddr en0"
 alias gmt="go mod tidy"
 
 # Vault
-alias gtv="cd $HOME/$WORKSPACE/hashicorp/vault"
-alias gte="cd $HOME/$WORKSPACE/hashicorp/environments"
+alias gtv="cd $HOME/$DEVELOPER/hashicorp/vault"
+alias gte="cd $HOME/$DEVELOPER/hashicorp/environments"
 alias vt="echo $VAULT_TOKEN"
 alias vlr="vault login root"
 
@@ -37,7 +37,7 @@ alias dl="cd ~/Downloads"
 alias dt="cd ~/Desktop"
 alias icloud="cd ~/Library/Mobile\ Documents/com~apple~CloudDocs"
 alias notes="cd ~/Library/Mobile\ Documents/iCloud\~md\~obsidian/Documents/notes"
-alias wksp="cd $HOME/$WORKSPACE"
+alias dev="cd $HOME/$DEVELOPER"
 
 # Misc
 alias vms="vmrun list"

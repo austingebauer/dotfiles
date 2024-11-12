@@ -99,7 +99,7 @@ function vsd3() {
 
 # Starts a Vault server in with a Consul storage backend
 function vsc() {
-    vault server -config="$HOME"/Workspace/hashicorp/environments/vault/server/standalone/config-consul.hcl > /tmp/vault.log 2>&1 &
+    vault server -config="$HOME/$DEVELOPER"/hashicorp/environments/vault/server/standalone/config-consul.hcl > /tmp/vault.log 2>&1 &
 }
 
 # Copies the passed plugin binary to my development plugin directory
