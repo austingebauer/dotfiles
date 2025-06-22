@@ -22,7 +22,7 @@ export VAGRANT_DEFAULT_PROVIDER="vmware_fusion"
 # AWS
 export AWS_DEFAULT_OUTPUT="json"
 export AWS_PAGER=""
-export AWS_PROFILE="default"
+#export AWS_PROFILE="default"
 
 # GCP
 export GOOGLE_EXTERNAL_ACCOUNT_ALLOW_EXECUTABLES=1
