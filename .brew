@@ -16,4 +16,5 @@ brew install hashicorp/tap/terraform
 brew install hugo
 brew install node@22
 brew install gdb
+brew install mkcert
 brew cleanup
