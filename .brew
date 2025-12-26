@@ -17,4 +17,5 @@ brew install hugo
 brew install node@22
 brew install gdb
 brew install mkcert
+brew install ykman
 brew cleanup
