@@ -7,6 +7,7 @@ function sync_dotfiles() {
 		--exclude "sync.sh" \
 		--exclude "README.md" \
 		--exclude "LICENSE" \
+		--exclude "provisioners/" \
 		-avh --perms . ~
 	echo "Sync complete!"
 }
