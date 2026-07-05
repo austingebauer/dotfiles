@@ -18,6 +18,12 @@ gsettings set org.gnome.desktop.peripherals.keyboard repeat-interval 15
 gsettings get org.gnome.desktop.peripherals.keyboard repeat-interval
 gsettings set org.gnome.desktop.peripherals.keyboard delay 200
 gsettings get org.gnome.desktop.peripherals.keyboard delay
+gsettings set org.gnome.shell.extensions.dash-to-dock dock-position 'BOTTOM'
+gsettings get org.gnome.shell.extensions.dash-to-dock dock-position
+gsettings set org.gnome.shell.extensions.dash-to-dock extend-height false
+gsettings get org.gnome.shell.extensions.dash-to-dock extend-height
+gsettings set org.gnome.shell.extensions.dash-to-dock dock-fixed false
+gsettings get org.gnome.shell.extensions.dash-to-dock dock-fixed
 echo ""
 
 print_header "Generate ssh key for GitHub authentication"
@@ -34,11 +40,5 @@ if [ ! -f "$KEY_PATH" ]; then
 else
     echo "SSH key already exists at $KEY_PATH. Skipping generation."
 fi
-echo "ACTION: add public key to GitHub $(cat ${KEY_PATH}.pub)"
+echo "ACTION: add public key to GitHub \"$(cat ${KEY_PATH}.pub)\""
 echo ""
-
-# Install Go tools
-#go install github.com/go-delve/delve/cmd/dlv@latest
-#go install honnef.co/go/tools/cmd/staticcheck@latest
-#go install golang.org/x/tools/cmd/godoc@latest
-#go install golang.org/x/tools/cmd/stress@latest
