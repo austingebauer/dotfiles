@@ -4,4 +4,6 @@
 [core]
         excludesfile = ~/.gitignore_global
 [pager]
-        branch = false
+	branch = false
+[url "git@github.com:"]
+	insteadOf = https://github.com/
