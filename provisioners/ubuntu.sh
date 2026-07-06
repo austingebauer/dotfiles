@@ -10,7 +10,10 @@ function print_header() {
 
 print_header "Install packages"
 sudo apt update && sudo apt upgrade -y
-sudo apt install -y git neovim
+sudo apt install -y git neovim terminator
+
+wget -P /tmp https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+sudo apt install /tmp/google-chrome-stable_current_amd64.deb
 echo ""
 
 print_header "Set peripherals settings"
