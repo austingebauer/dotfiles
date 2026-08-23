@@ -11,22 +11,10 @@ function print_header() {
 print_header "Install packages"
 sudo apt update
 sudo apt upgrade -y
-sudo apt install -y git neovim terminator alacritty curl build-essential
-rm /tmp/google-chrome-stable_current_amd64.deb
+sudo apt install -y git neovim terminator curl build-essential fish
+rm /tmp/google-chrome-stable_current_amd64.deb || true
 wget -P /tmp https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 sudo apt install /tmp/google-chrome-stable_current_amd64.deb
-echo ""
-
-print_header "Download font"
-if [ ! -d "$HOME/.local/share/fonts" ]; then
-    mkdir -p ~/.local/share/fonts
-    wget https://github.com/ryanoasis/nerd-fonts/releases/latest/download/JetBrainsMono.zip
-    unzip JetBrainsMono.zip -d ~/.local/share/fonts/JetBrainsMono
-    rm JetBrainsMono.zip
-    fc-cache -fv
-else
-    echo "Fonts already downloaded"
-fi
 echo ""
 
 print_header "Set peripherals settings"
