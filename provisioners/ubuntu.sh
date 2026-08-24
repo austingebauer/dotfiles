@@ -17,6 +17,11 @@ wget -P /tmp https://dl.google.com/linux/direct/google-chrome-stable_current_amd
 sudo apt install /tmp/google-chrome-stable_current_amd64.deb
 echo ""
 
+print_header "Install go1.26.7"
+rm /tmp/go1.26.7.linux-amd64.tar.gz || true
+wget -P /tmp https://go.dev/dl/go1.26.7.linux-amd64.tar.gz
+rm -rf /$HOME/.local/bin/go && tar -C /$HOME/.local/bin -xzf /tmp/go1.26.7.linux-amd64.tar.gz
+
 print_header "Set peripherals settings"
 gsettings set org.gnome.desktop.peripherals.keyboard repeat-interval 20
 gsettings get org.gnome.desktop.peripherals.keyboard repeat-interval
