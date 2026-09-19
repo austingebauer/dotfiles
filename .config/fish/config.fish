@@ -3,6 +3,7 @@ if status is-interactive
 end
 
 abbr -a gco "git checkout"
+abbr -a gcb "git checkout -b"
 abbr -a gst "git status"
 abbr -a grs "git restore"
 abbr -a grst "git restore --staged"
