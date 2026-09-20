@@ -45,7 +45,7 @@ function install_jetbrains_ide() {
 print_header "Install packages"
 sudo apt update
 sudo apt upgrade -y
-sudo apt install -y git vim terminator curl gcc build-essential fish
+sudo apt install -y git vim terminator curl gcc build-essential fish btop
 echo ""
 
 print_header "Install chrome"

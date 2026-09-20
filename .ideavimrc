@@ -1,0 +1,33 @@
+" Click moves caret (no Ctrl required)
+set ideamouseclick
+
+" Yank uses the Linux system clipboard (Ctrl+C / Ctrl+V)
+set clipboard+=unnamedplus
+
+" Don't copy deletes/changes to the clipboard — only yank
+nnoremap x "_x
+nnoremap X "_X
+vnoremap x "_x
+vnoremap X "_X
+
+nnoremap c "_c
+nnoremap C "_C
+vnoremap c "_c
+vnoremap C "_C
+
+nnoremap d "_d
+nnoremap D "_D
+vnoremap d "_d
+
+nnoremap s "_s
+nnoremap S "_S
+vnoremap s "_s
+
+" Use native find for ctrl-f
+sethandler <C-F> a:ide
+
+" Close the current tab/window instantly with Ctrl-W
+nnoremap <C-w> :action CloseContent<CR>
+
+" Zero goes to first non-blank char on line instead of line beginning
+nnoremap 0 ^
