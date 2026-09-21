@@ -45,7 +45,15 @@ function install_jetbrains_ide() {
 print_header "Install packages"
 sudo apt update
 sudo apt upgrade -y
-sudo apt install -y git vim terminator curl gcc build-essential fish btop
+sudo apt install -y git vim terminator curl gcc build-essential fish btop gnupg software-properties-common
+echo ""
+
+print_header "Install Terraform"
+if [ ! -f /usr/share/keyrings/hashicorp-archive-keyring.gpg ]; then
+  wget -O - https://apt.releases.hashicorp.com/gpg | sudo gpg --dearmor -o /usr/share/keyrings/hashicorp-archive-keyring.gpg
+fi
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com $(grep -oP '(?<=UBUNTU_CODENAME=).*' /etc/os-release || lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/hashicorp.list
+sudo apt update && sudo apt install -y terraform
 echo ""
 
 print_header "Install chrome"
