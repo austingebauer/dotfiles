@@ -56,6 +56,12 @@ echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/hashi
 sudo apt update && sudo apt install -y terraform
 echo ""
 
+print_header "Install AWS CLI"
+if ! command -v aws >/dev/null 2>&1; then
+  curl -fsSL https://awscli.amazonaws.com/v2/install.sh | sudo bash -s -- --system
+fi
+echo ""
+
 print_header "Install chrome"
 if dpkg -s google-chrome-stable >/dev/null 2>&1; then
   echo "Chrome is already installed"
