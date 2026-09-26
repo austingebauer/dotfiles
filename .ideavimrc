@@ -31,3 +31,13 @@ nnoremap <C-w> :action CloseContent<CR>
 
 " Zero goes to first non-blank char on line instead of line beginning
 nnoremap 0 ^
+
+" Alternative ways to get back to normal mode
+inoremap jj <Esc>
+inoremap jJ <Esc>
+inoremap Jj <Esc>
+inoremap JJ <Esc>
+inoremap jk <Esc>
+inoremap jK <Esc>
+inoremap Jk <Esc>
+inoremap JK <Esc>
