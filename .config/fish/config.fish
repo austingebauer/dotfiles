@@ -16,8 +16,6 @@ abbr -a gd "git diff"
 abbr -a glg "git log --stat"
 abbr -a gaa "git add --all"
 abbr -a gcmsg "git commit --message"
-abbr -a satcode "cd $HOME/Developer/satcode"
-abbr -a payload "cd $HOME/Developer/satcode/payload"
 abbr -a tf "terraform"
 
 set -gx fish_greeting ""
