@@ -3,6 +3,7 @@
 function sync_dotfiles() {
 	rsync --exclude ".git/" \
 		--exclude ".gitignore" \
+		--exclude ".idea" \
 		--exclude ".DS_Store" \
 		--exclude "sync.sh" \
 		--exclude "README.md" \
