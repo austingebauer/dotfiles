@@ -13,6 +13,10 @@ abbr -a glg "git log --stat"
 abbr -a gaa "git add --all"
 abbr -a gcmsg "git commit --message"
 abbr -a tf "terraform"
+if command -q nvim
+    abbr -a vim nvim
+    set -gx EDITOR nvim
+end
 
 set -gx fish_greeting ""
 
