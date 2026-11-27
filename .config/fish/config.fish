@@ -1,7 +1,3 @@
-if status is-interactive
-    # Commands to run in interactive sessions can go here
-end
-
 abbr -a gco "git checkout"
 abbr -a gcb "git checkout -b"
 abbr -a gst "git status"
@@ -20,5 +16,8 @@ abbr -a tf "terraform"
 
 set -gx fish_greeting ""
 
+fish_add_path /opt/homebrew/bin /opt/homebrew/sbin
 fish_add_path $HOME/.local/bin/go/bin
-fish_add_path (go env GOPATH)/bin
+if command -q go
+    fish_add_path (go env GOPATH)/bin
+end

@@ -6,6 +6,6 @@ case $- in
       *) return;;
 esac
 
-if command -v fish >/dev/null 2>&1; then
+if command -v fish >/dev/null 2>&1 && [[ $(ps -o comm= -p $PPID) != *fish* ]]; then
     exec fish
 fi
