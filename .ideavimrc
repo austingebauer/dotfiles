@@ -33,10 +33,6 @@ nnoremap <C-w> :action CloseContent<CR>
 nnoremap 0 ^
 
 " Alternative ways to get back to normal mode
-inoremap jj <Esc>
-inoremap jJ <Esc>
-inoremap Jj <Esc>
-inoremap JJ <Esc>
 inoremap jk <Esc>
 inoremap jK <Esc>
 inoremap Jk <Esc>
