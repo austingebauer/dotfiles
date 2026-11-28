@@ -88,15 +88,15 @@ install_jetbrains_ide GO goland
 echo ""
 
 GO_VERSION=1.26.7
-GO_DIR=$HOME/.local/bin/go
+GO_DIR=/usr/local/go
 print_header "Install go$GO_VERSION"
 if [ "$("$GO_DIR/bin/go" version 2>/dev/null | awk '{print $3}')" = "go$GO_VERSION" ]; then
   echo "go$GO_VERSION is already installed"
 else
   tgz=/tmp/go$GO_VERSION.linux-amd64.tar.gz
   wget -O "$tgz" "https://go.dev/dl/go$GO_VERSION.linux-amd64.tar.gz"
-  rm -rf "$GO_DIR"
-  tar -C "$(dirname "$GO_DIR")" -xzf "$tgz"
+  sudo rm -rf "$GO_DIR"
+  sudo tar -C "$(dirname "$GO_DIR")" -xzf "$tgz"
   rm -f "$tgz"
 fi
 echo ""

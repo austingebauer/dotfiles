@@ -21,7 +21,7 @@ end
 set -gx fish_greeting ""
 
 fish_add_path /opt/homebrew/bin /opt/homebrew/sbin
-fish_add_path $HOME/.local/bin/go/bin
+fish_add_path /usr/local/go/bin
 if command -q go
     fish_add_path (go env GOPATH)/bin
 end
