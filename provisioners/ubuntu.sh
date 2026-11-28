@@ -45,7 +45,16 @@ function install_jetbrains_ide() {
 print_header "Install packages"
 sudo apt update
 sudo apt upgrade -y
-sudo apt install -y git vim terminator curl gcc build-essential fish btop gnupg software-properties-common libcunit1-dev neovim
+sudo apt install -y git vim terminator curl gcc build-essential fish btop gnupg software-properties-common libcunit1-dev
+echo ""
+
+print_header "Install neovim"
+tgz=/tmp/nvim-linux-x86_64.tar.gz
+wget -O "$tgz" https://github.com/neovim/neovim/releases/latest/download/nvim-linux-x86_64.tar.gz
+sudo rm -rf /opt/nvim-linux-x86_64
+sudo tar -C /opt -xzf "$tgz"
+sudo ln -sf /opt/nvim-linux-x86_64/bin/nvim /usr/local/bin/nvim
+rm -f "$tgz"
 echo ""
 
 print_header "Install Terraform"
